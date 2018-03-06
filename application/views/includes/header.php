@@ -41,9 +41,9 @@
         <!-- Logo -->
         <a href="<?php echo base_url(); ?>" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>CI</b>AS</span>
+          <span class="logo-mini"><b>FC</b></span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>findcryptocoin</b>FC</span>
+          <span class="logo-lg"><b>Findcryptocoin</b></span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">

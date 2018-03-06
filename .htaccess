@@ -1,7 +1,19 @@
 DirectoryIndex index.php
-RewriteEngine on
+#RewriteEngine on
  
-RewriteCond $1 !^(index\.php|(.*)\.swf|forums|images|css|downloads|jquery|js|robots\.txt|favicon\.ico)
+#RewriteCond $1 !^(index\.php|(.*)\.swf|forums|images|css|downloads|jquery|js|robots\.txt|favicon\.ico)
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ ./index.php?$1 [L,QSA]
+
+
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\. [OR]
+RewriteCond %{HTTP_HOST} ^findcryptocoin\.com$ [NC]
+RewriteRule ^ https://findcryptocoin.com%{REQUEST_URI} [R=301,L,NE]
+RewriteCond %{THE_REQUEST} ^[A-Z]+\ /index\.php(/[^\ ]*)?\ HTTP/ 
+RewriteRule ^index\.php(/(.*))?$ findcryptocoin.com/$2 [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ ./index.php?$1 [L,QSA]
+RewriteRule ^(.*)$ index.php/$1 [L]

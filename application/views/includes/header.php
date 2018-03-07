@@ -71,10 +71,10 @@
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="<?php echo base_url(); ?>loadChangePass" class="btn btn-default btn-flat"><i class="fa fa-key"></i> Change Password</a>
+                      <a href="<?php echo base_url(); ?>admin/loadChangePass" class="btn btn-default btn-flat"><i class="fa fa-key"></i> Change Password</a>
                     </div>
                     <div class="pull-right">
-                      <a href="<?php echo base_url(); ?>logout" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Sign out</a>
+                      <a href="<?php echo base_url(); ?>admin/logout" class="btn btn-default btn-flat"><i class="fa fa-sign-out"></i> Sign out</a>
                     </div>
                   </li>
                 </ul>
@@ -91,7 +91,7 @@
           <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
             <li class="treeview">
-              <a href="<?php echo base_url(); ?>dashboard">
+              <a href="<?php echo base_url(); ?>admin/dashboard">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span></i>
               </a>
             </li>
@@ -129,7 +129,7 @@
             {
             ?>
             <li class="treeview">
-              <a href="<?php echo base_url(); ?>userListing">
+              <a href="<?php echo base_url(); ?>admin/userListing">
                 <i class="fa fa-users"></i>
                 <span>Users</span>
               </a>

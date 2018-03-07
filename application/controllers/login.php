@@ -1,12 +1,5 @@
 <?php if(!defined('BASEPATH')) exit('No direct script access allowed');
 
-/**
- * Class : Login (LoginController)
- * Login class to control to authenticate user credentials and starts user's session.
- * @author : Kishor Mali
- * @version : 1.1
- * @since : 15 November 2016
- */
 class Login extends CI_Controller
 {
     /**
@@ -39,7 +32,7 @@ class Login extends CI_Controller
         }
         else
         {
-            redirect('/dashboard');
+            redirect('/admin/dashboard');
         }
     }
     
@@ -78,14 +71,14 @@ class Login extends CI_Controller
                                     
                     $this->session->set_userdata($sessionArray);
                     
-                    redirect('/dashboard');
+                    redirect('/admin/dashboard');
                 }
             }
             else
             {
                 $this->session->set_flashdata('error', 'Email or password mismatch');
                 
-                redirect('/login');
+                redirect('/admin/login');
             }
         }
     }
@@ -162,7 +155,7 @@ class Login extends CI_Controller
                 $status = 'invalid';
                 setFlashData($status, "This email is not registered with us.");
             }
-            redirect('/forgotPassword');
+            redirect('/admin/forgotPassword');
         }
     }
 
@@ -184,7 +177,7 @@ class Login extends CI_Controller
         }
         else
         {
-            redirect('/login');
+            redirect('/admin/login');
         }
     }
     
@@ -228,7 +221,7 @@ class Login extends CI_Controller
             
             setFlashData($status, $message);
 
-            redirect("/login");
+            redirect("/admin/login");
         }
     }
 

@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "login";
+$route['default_controller'] = "userlogin";
 $route['404_override'] = 'error';
 
 
@@ -70,3 +70,9 @@ $route['admin/createPasswordUser'] = "login/createPasswordUser";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
+
+// user routes
+
+$route['user'] = 'userlogin';
+$route['user/forgotpassword'] = 'userlogin/forgotpassword';
+$route['user/signup'] = 'userlogin/signup';

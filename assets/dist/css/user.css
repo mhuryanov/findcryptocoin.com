@@ -1,0 +1,155 @@
+body{
+	font-family: Helvetica
+}
+
+.flex{
+	display: flex;
+}
+
+.space-between{
+	justify-content: space-between;
+}
+
+.align-item-center{
+	align-items: center;
+}
+
+a{
+	text-decoration: none;
+	color: #333;
+	font-weight: 700;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+.content{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.content .login-content{
+	width: 800px;
+	max-width: 100%;
+
+}
+
+.content .login-content h1,
+.content .forgotpassword-content h1{
+	text-align: center;
+	margin-bottom: 50px;
+	font-size: 50px;
+	color:#555;
+}
+
+.content .login-content label{
+	font-size: 15px;
+	color: #777;
+}
+
+.content .login-content .login-input-div{
+	justify-content: space-between;
+}
+
+.content .login-content .login-input-div .login-form{
+	width: 43%;
+}
+
+.content .login-content .login-input-div .login-form .input-item{
+	padding: 10px;
+}
+
+.content .login-content .login-input-div .login-form .input-item input{
+	width: 100%;
+	height: 50px;
+	border: solid 1px #888;
+	/*padding: 5px 10px;*/
+	font-size: 15px;
+}
+
+.content .login-content .login-input-div .login-form .input-item input[type='checkbox']{
+	width: 20px;
+	height: 20px;
+	border: solid 1px #888;
+	padding: 5px 10px;
+	font-size: 15px;
+}
+
+.content .login-content .login-input-div .login-form .input-item .login-btn{
+	background-color: rgba(200, 101, 103, 1);
+	color: white;
+	border: 0;
+	cursor: pointer;
+}
+
+.content .login-content .login-input-div .login-form .input-item .login-btn:hover{
+	opacity: 0.8;
+}
+
+.content .login-content .login-input-div .middle-line{
+	border-right: solid 1px #888;
+}
+
+.content .login-content .login-input-div .social-login{
+	width: 43%;
+}
+
+.content .login-content .login-input-div .social-login .social-login-item{
+	margin: 10px 10px 22px;
+}
+
+.content .login-content .login-input-div .social-login .social-login-item button{
+	width: 100%;
+	height: 60px;
+	color: white;
+	border: 0;
+	cursor: pointer;
+}
+
+.content .login-content .login-input-div .social-login .social-login-item button:hover{
+	opacity: 0.8;
+}
+
+.content .login-content .login-input-div .social-login .social-login-item button.facebook-login-btn{
+	background: #3b5998;
+}
+
+.content .login-content .login-input-div .social-login .social-login-item button.google-login-btn{
+	background: #e53935;
+}
+
+.forgotpassword-content{
+	width: 700px;
+	max-width: 100%;
+	text-align: center;;
+}
+
+.forgotpassword-content input{
+	width: 80%;
+	height: 50px;
+	border: solid 1px #888;
+	/*padding: 5px 10px;*/
+	font-size: 15px;
+}
+
+.forgotpassword-content button{
+	width: 80%;
+	background-color: rgba(200, 101, 103, 1);
+	color: white;
+	border: 0;
+	cursor: pointer;
+	height: 50px;
+	border: 0;
+	margin-top: 50px;
+}
+
+.forgotpassword-content button:hover{
+	opacity: 0.8;
+}

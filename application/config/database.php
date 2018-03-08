@@ -50,13 +50,13 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'findcryptocoin';
-
-// $db['default']['username'] = 'findcryptocoin';
-// $db['default']['password'] = 'kRJBmOnl$BJq';
+// $db['default']['username'] = 'root';
+// $db['default']['password'] = '';
 // $db['default']['database'] = 'findcryptocoin';
+
+$db['default']['username'] = 'findcryptocoin';
+$db['default']['password'] = 'kRJBmOnl$BJq';
+$db['default']['database'] = 'findcryptocoin';
 
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';

@@ -72,7 +72,13 @@ $route['admin/createPasswordUser'] = "login/createPasswordUser";
 /* Location: ./application/config/routes.php */
 
 // user routes
-
+	// frontend
 $route['user'] = 'userlogin';
 $route['user/forgotpassword'] = 'userlogin/forgotpassword';
 $route['user/signup'] = 'userlogin/signup';
+$route['home'] = 'home';
+
+	// backend
+$route['user/b_signup'] = 'userlogin/b_signup';
+$route['user/b_signin'] = 'userlogin/b_signin';
+

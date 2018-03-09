@@ -187,6 +187,14 @@ class User_model extends CI_Model
         
         return $this->db->affected_rows();
     }
+
+    function usersByEmail($email){
+        $this->db->where('email', $email);
+        $query = $this->db->get('tbl_users');
+        
+        $user = $query->result();
+        return $user;
+    }
 }
 
   

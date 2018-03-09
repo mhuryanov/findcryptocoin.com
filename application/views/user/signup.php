@@ -1,22 +1,34 @@
 <div class="login-content">
 	<h1>Sign up</h1>
+	
+	<div class="alert alert-success alert-dismissible" id="signup-success-alert" style="display: none;">
+    	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    	<strong>Success!</strong>
+    	<span class="alert-data"></span>
+  	</div>
+
+  	<div class="alert alert-danger alert-dismissible" id="signup-error-alert" style="display: none;">
+    	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    	<strong>Error!</strong>
+    	<span class="alert-data"></span>
+    </div>
 
 	<div class="login-input-div flex">
 		<div class="login-form">
 			<div class="input-item">
-				<input type="email" name="email" placeholder="Email">
+				<input type="email" name="email" placeholder="Email" id="user-email">
 			</div>
 
 			<div class="input-item">
-				<input type="password" name="password" placeholder="Password">
+				<input type="password" name="password" placeholder="Password" id="user-password">
 			</div>
 
 			<div class="input-item">
-				<input type="password" name="password" placeholder="Retype password">
+				<input type="password" name="password" placeholder="Retype password" id="confirm-password">
 			</div>
 
 			<div class="input-item">
-				<input type="button" value="Sign up" class="login-btn">
+				<input type="button" value="Sign up" class="login-btn" id="signup-btn">
 			</div>
 
 			<div class="input-item" style="margin-top: 20px;text-align: center;">
@@ -38,3 +50,8 @@
 		</div>
 	</div>
 </div>
+
+<!-- script -->
+<script type="text/javascript" src="<?=base_url()?>assets/js/user/global.js"></script>
+<script type="text/javascript" src="<?=base_url()?>assets/js/user/signup.js"></script>
+<!-- script -->

@@ -2,7 +2,7 @@
 
 	<div class="sidebar">
 		<div class="account-logo">Account Logo</div>
-		<div class="menu-item active">
+		<div class="menu-item active" data-item-name="my_order">
 			<div class="menu-item-content">
 				<span class="menu-item-icon"><i class="fas fa-file-alt"></i></span>
 				<span class="menu-item-title">My Orders</span>

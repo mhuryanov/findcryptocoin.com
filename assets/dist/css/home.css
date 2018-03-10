@@ -8,6 +8,10 @@ body {
     font-size: 17px;
 }
 
+.flex{
+    display: flex;
+}
+
 #background-video {
     position: fixed;
     right: 0;
@@ -66,5 +70,121 @@ body {
     color: white;
 }
 
+.home-content{
+    width: 100%;
+    margin-top: 70px;
+    display: flex;
+    z-index: 2;
+    position: relative;
+    justify-content: space-around;
+    padding: 100px 0;
+}
 
+.home-content .buy-bitcoin-form{
+
+}
+
+.home-content .buy-bitcoin-form .buy-form-div{
+    width: 400px;
+    position: relative;
+    display: flex;
+}
+
+.home-content .buy-bitcoin-form .buy-form-div .buy-form-bg{
+    width: 100%;
+    background: white;
+    opacity: 0.5;
+    border-radius: 10px;
+    height: 100%;
+    position: absolute;
+    top: 0
+}
+
+.home-content .buy-bitcoin-form .buy-form-div .buy-form-content{
+    padding: 20px;
+    text-align: center;
+    z-index: 1;
+}
+
+.home-content .buy-bitcoin-form .buy-form-div .buy-form-content .title{
+    color:rgba(61, 155, 233, 1);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.home-content .buy-bitcoin-form .buy-form-div .buy-form-content .subtitle{
+    color:rgba(61, 155, 233, 1);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.home-content .buy-bitcoin-form .buy-form-div .buy-form-content .buy-now-btn,
+.home-content .buy-bitcoin-form .buy-form-div .buy-form-content .see-actions-btn{
+    background: rgba(61, 155, 233, 1);
+    height: 40px;
+    border-radius: 20px;
+    border:0;
+    padding: 0 40px;
+    color: white;
+    cursor: pointer;
+     -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
+    -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+}
+
+
+.footer{
+    z-index: 1;
+    padding: 20px;
+    position: relative;
+}
+
+.footer .footer-content{
+    z-index: 1;
+    position: relative;
+}
+
+.footer .footer-bg{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    left: 0;
+    opacity: 0.7;
+}
+
+.footer p{
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.footer .footer-input{
+
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+    color: #000000;
+    margin: 0 0 5px;
+    width: 100%;
+    -webkit-transition: 0.5s ease all;
+    transition: 0.5s ease all;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font: normal normal normal 18px/1.4em baskervillemtw01-smbdit,serif;
+    -webkit-appearance: none;
+    border-radius: 0;
+    font: normal normal normal 18px/1.4em baskervillemtw01-smbdit,serif;
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+    font-style: italic;
+}
+
+.footer .footer-input::placeholder{
+    color: black;
+}
+
+.footer .footer-input:focus{
+    outline: none;
 }

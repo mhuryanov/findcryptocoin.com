@@ -73,7 +73,7 @@ class UserLogin extends CI_Controller
                     $this->session->set_userdata($sessionArray);
                     
                     $return_data['code'] = 'success';
-                    $return_data['message'] = 'Signup is successed!';
+                    $return_data['message'] = 'Signin is successed!';
                     
                 }
             }

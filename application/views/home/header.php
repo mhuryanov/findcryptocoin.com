@@ -21,8 +21,8 @@
 	</div>
 
 	<div class="menu-div">
-		<a href="#" class="menu-item">Home</a>
-		<a href="#" class="menu-item">My Account</a>
+		<a href="<?=base_url()?>home" class="menu-item">Home</a>
+		<a href="<?=base_url()?>user/myaccount" class="menu-item">My Account</a>
 		<div class="menu-item">
 			<p>Hello</p>
 			<p><a href="#">Log out</a></p>

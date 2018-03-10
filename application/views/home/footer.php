@@ -59,6 +59,7 @@
 		<div class="footer-bg"></div>
 	</div>
 	<!-- footer end -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
 </body>
 </html>

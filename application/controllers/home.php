@@ -22,4 +22,12 @@ class Home extends CI_Controller
         $this->load->view('home/footer', $data);
     }
 
+    public function myaccount() {
+        $data['title'] = 'FCC | MY Account';
+
+        $this->load->view('home/header', $data);
+        $this->load->view('home/myaccount', $data);
+        $this->load->view('home/footer', $data);
+    }
+
 }

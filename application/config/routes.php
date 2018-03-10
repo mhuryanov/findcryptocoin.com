@@ -77,6 +77,7 @@ $route['user'] = 'userlogin';
 $route['user/forgotpassword'] = 'userlogin/forgotpassword';
 $route['user/signup'] = 'userlogin/signup';
 $route['home'] = 'home';
+$route['user/myaccount'] = 'home/myaccount';
 
 	// backend
 $route['user/b_signup'] = 'userlogin/b_signup';

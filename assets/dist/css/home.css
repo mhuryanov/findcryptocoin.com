@@ -188,3 +188,181 @@ body {
 .footer .footer-input:focus{
     outline: none;
 }
+
+
+.myaccount{
+    margin: 70px 10%;
+    display: flex;
+    align-items: stretch;
+    background: #eee;
+}
+
+
+.myaccount .sidebar{
+    width: 250px;
+    transition: all 0.5s;
+}
+
+.myaccount .sidebar .account-logo{
+    display: flex;
+    justify-content: center;
+    color: white;
+    background: #051835;
+    height: 70px;
+    align-items: center;
+}
+
+.myaccount .sidebar .menu-item{
+    height: 70px;
+    background: #102c58;
+    color: white;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.myaccount .sidebar .menu-item:hover{
+    background: #f5642d;
+    cursor: pointer;
+}
+
+
+.myaccount .sidebar .menu-item .menu-item-content{
+    display: flex;
+    align-items: center;
+}
+
+.myaccount .sidebar .menu-item .menu-item-link{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.myaccount .sidebar .menu-item .menu-item-content .menu-item-icon{
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    /*#5f9cfd*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.myaccount .sidebar .menu-item .menu-item-content .menu-item-title{
+    transition: all 0.5s;
+}
+
+/*start collapsed side bar*/
+
+.myaccount .sidebar.collapsed{
+    width: 100px;
+}
+
+.myaccount .sidebar.collapsed .menu-item .menu-item-content .menu-item-title{
+    display: none;
+}
+
+/*end collapsed side bar*/
+
+/*start active menu item*/
+
+.myaccount .sidebar .menu-item.active{}
+
+.myaccount .sidebar .menu-item.active .menu-item-content{
+    border-left: solid 3px #5f9cfd;
+    color: #5f9cfd;
+}
+
+/*end active menu item*/
+
+.myaccount .myaccount-content{
+    width: calc(100% - 250px);
+    background: #eee;
+    transition: all 0.5s;
+}
+
+.myaccount .myaccount-content.collapsed{
+    width: calc(100% - 100px);
+}
+
+.myaccount .myaccount-content .myaccount-content-header{
+    height: 70px;
+    background: white;
+    border-bottom: solid 1px #ddd;
+    display: flex;
+    align-items: center;
+}
+
+
+.myaccount .myaccount-content .myaccount-content-header .sidebar-toggle-btn{
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: solid 1px #ddd;
+    cursor: pointer;
+}
+
+.myaccount .myaccount-content .myaccount-content-header .sidebar-toggle-btn:hover{
+    color: #f5642d;
+}
+
+.myaccount .myaccount-content .myaccount-content-header .alerts-btn{
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: solid 1px #ddd;
+    cursor: pointer;
+    position: relative;
+}
+
+.myaccount .myaccount-content .myaccount-content-header .alerts-btn:hover{
+    color: #f5642d;
+}
+
+.myaccount .myaccount-content .myaccount-content-header .alerts-btn .alerts-badge{
+    position: absolute;
+    bottom: -10px;
+    background: red;
+    border-radius: 50%;
+    color: white;
+    padding: 5px 5px;
+    font-size: 12px;
+}
+
+.myaccount .myaccount-content .myaccount-content-header .power-btn{
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: solid 1px #ddd;
+    cursor: pointer;
+    position: relative;
+}
+
+.myaccount .myaccount-content .myaccount-content-header .content-search{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-right: solid 1px #ddd;
+}
+
+.myaccount .myaccount-content .myaccount-content-header .content-search .search-input{
+    width: 100%;
+    height: 100%;
+    border: 0;
+    outline: none;
+    padding-left: 20px;
+}
+
+.myaccount .myaccount-content .myaccount-content-header .power-btn:hover{
+    color: #f5642d;
+}
+

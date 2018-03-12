@@ -55,6 +55,155 @@
 				<i class="fas fa-power-off"></i>
 			</span>			
 		</div>
+
+		<div class="myaccount-content-details">
+			<div class="myaccount-content-item" id="my-orders-item">
+				<div class="content-item-title">
+					<h3>My Orders</h3>
+				</div>
+				<div class="content-item-details">
+					<table class="table table-striped table-bordered table-list">
+						<thead>
+							<th>Transaction Id</th>
+							<th>Details</th>
+							<th>Date</th>
+							<th>Status</th>
+							<th></th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>ID1234567890</td>
+								<td>Buy 100 BTC</td>
+								<td>Jan-01-2018</td>
+								<td>Not Submitted</td>
+								<td><button>View</button></td>
+							</tr>
+
+							<tr>
+								<td>ID1234567890</td>
+								<td>Buy 100 BTC</td>
+								<td>Jan-01-2018</td>
+								<td>Not Submitted</td>
+								<td><button>View</button></td>
+							</tr>
+
+							<tr>
+								<td>ID1234567890</td>
+								<td>Buy 100 BTC</td>
+								<td>Jan-01-2018</td>
+								<td>Not Submitted</td>
+								<td><button>View</button></td>
+							</tr>
+
+							<tr>
+								<td>ID1234567890</td>
+								<td>Buy 100 BTC</td>
+								<td>Jan-01-2018</td>
+								<td>Not Submitted</td>
+								<td><button>View</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="myaccount-content-item" id="my-orders-item">
+				<div class="content-item-title">
+					<h3>My Communications</h3>
+				</div>
+				<div class="content-item-details">
+					<table class="table table-striped table-bordered table-list">
+						<thead>
+							<th>In/Out</th>
+							<th>From</th>
+							<th>To</th>
+							<th>Message</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td></td>
+								<td>Base(You)</td>
+								<td>Mark</td>
+								<td>View Contact<td>
+							</tr>
+
+							<tr>
+								<td></td>
+								<td>Base(You)</td>
+								<td>Mark</td>
+								<td>View Contact<td>
+							</tr>
+
+							<tr>
+								<td></td>
+								<td>Base(You)</td>
+								<td>Mark</td>
+								<td>View Contact<td>
+							</tr>
+
+							<tr>
+								<td></td>
+								<td>Base(You)</td>
+								<td>Mark</td>
+								<td>View Contact<td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div class="myaccount-content-item" id="my-orders-item">
+				<div class="content-item-title">
+					<h3>My Account</h3>
+				</div>
+				<div class="content-item-details">
+					<table class="table table-striped table-bordered table-list">
+						<thead>
+							<th>ID</th>
+							<th>Label</th>
+							<th>Value</th>
+							<th>Action</th>
+							
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>First Name</td>
+								<td><input type="" class="form-control" placeholder="Mark" name=""></td>
+								<td><button class="btn btn-success">Save</button></td>
+								
+							</tr>
+
+							<tr>
+								<td>1</td>
+								<td>First Name</td>
+								<td><input type="" class="form-control" placeholder="Mark" name=""></td>
+								<td><button class="btn btn-success">Save</button></td>
+								
+							</tr>
+
+							<tr>
+								<td>1</td>
+								<td>First Name</td>
+								<td><input type="" class="form-control" placeholder="Mark" name=""></td>
+								<td><button class="btn btn-success">Save</button></td>
+								
+							</tr>
+
+							<tr>
+								<td>1</td>
+								<td>First Name</td>
+								<td><input type="" class="form-control" placeholder="Mark" name=""></td>
+								<td><button class="btn btn-success">Save</button></td>
+								
+							</tr>
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
 	</div>
 
 </div>

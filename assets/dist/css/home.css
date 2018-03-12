@@ -201,6 +201,7 @@ body {
 .myaccount .sidebar{
     width: 250px;
     transition: all 0.5s;
+    background: #102c58;
 }
 
 .myaccount .sidebar .account-logo{
@@ -367,3 +368,19 @@ body {
     color: #f5642d;
 }
 
+.myaccount .myaccount-content .myaccount-content-details{
+    padding: 20px 5%;
+}
+
+.myaccount .myaccount-content .myaccount-content-details .myaccount-content-item{
+    padding: 20px 5%;
+}
+
+.myaccount .myaccount-content .myaccount-content-details .myaccount-content-item .content-item-details{
+
+}
+
+
+.myaccount .myaccount-content .myaccount-content-details .myaccount-content-item .content-item-details table{
+    background: white;
+}

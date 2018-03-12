@@ -16,7 +16,7 @@ class Home extends CI_Controller
 
     public function index() {
         $data['title'] = "FCC | Home";
-
+        $this->load->model('background_model');
         $this->load->view('home/header', $data);
         $this->load->view('home/homepage', $data);
         $this->load->view('home/footer', $data);

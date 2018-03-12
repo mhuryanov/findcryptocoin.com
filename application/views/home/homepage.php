@@ -1,6 +1,13 @@
+<?php if ($this->session->userdata('bg_option') == 'video'){?>
 <video autoplay muted loop id="background-video">
-  <source src="https://video.wixstatic.com/video/a4e551_3a19e8cc4307471287126f009a30b29e/360p/mp4/file.mp4" type="video/mp4">
+  <source src="<?=base_url()?>assets/background/<?=$this->session->userdata('bg_src')?>" type="video/mp4">
 </video>
+
+<?php }	?>
+
+<?php if ($this->session->userdata('bg_option') == 'image'){?>
+<img src="<?=base_url()?>assets/background/<?=$this->session->userdata('bg_src')?>" id="background-video">
+<?php }	?>
 
 <div class="home-content flex">
 	<div class="buy-bitcoin-form">

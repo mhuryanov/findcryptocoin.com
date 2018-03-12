@@ -23,8 +23,11 @@
 	</div>
 
 	<div class="menu-div">
-		<a href="<?=base_url()?>home" class="menu-item">Home</a>
-		<a href="<?=base_url()?>user/myaccount" class="menu-item">My Account</a>
+		<?php foreach($menus as $menu){
+			?>
+			<a href="<?=base_url().$menu['menu_target']?>" class="menu-item"><?=$menu['menu_label']?></a>
+			<?php
+		}?>
 		<div class="menu-item">
 			<p>Hello</p>
 			<p><a href="#">Log out</a></p>

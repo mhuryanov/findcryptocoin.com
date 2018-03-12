@@ -2,6 +2,7 @@
 
 class Home extends CI_Controller
 {
+    public $currentMenus;
     public function __construct()
     {
         parent::__construct();
@@ -11,11 +12,13 @@ class Home extends CI_Controller
         {
             redirect('/');
         }
-        
+        $this->load->model('menu_model');
+        $this->currentMenus = $this->menu_model->getCurrentMenus();
     }
 
     public function index() {
         $data['title'] = "FCC | Home";
+        $data['menus'] = $this->currentMenus;
         $this->load->model('background_model');
         $this->load->view('home/header', $data);
         $this->load->view('home/homepage', $data);
@@ -24,7 +27,7 @@ class Home extends CI_Controller
 
     public function myaccount() {
         $data['title'] = 'FCC | MY Account';
-
+        $data['menus'] = $this->currentMenus;
         $this->load->view('home/header', $data);
         $this->load->view('home/myaccount', $data);
         $this->load->view('home/footer', $data);

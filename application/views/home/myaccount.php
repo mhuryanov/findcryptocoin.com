@@ -2,7 +2,7 @@
 
 	<div class="sidebar">
 		<div class="account-logo">Account Logo</div>
-		<div class="menu-item active" data-item-name="my_order">
+		<div class="menu-item active" data-item-name="my-orders-item">
 			<div class="menu-item-content">
 				<span class="menu-item-icon"><i class="fas fa-file-alt"></i></span>
 				<span class="menu-item-title">My Orders</span>
@@ -10,7 +10,7 @@
 			<a class="menu-item-link" href="#"></a>
 		</div>
 
-		<div class="menu-item">
+		<div class="menu-item" data-item-name="my-communication-item">
 			<div class="menu-item-content">
 				<span class="menu-item-icon"><i class="fas fa-history"></i></span>
 				<span class="menu-item-title">My Communications</span>
@@ -18,7 +18,7 @@
 			<a class="menu-item-link" href="#"></a>
 		</div>
 
-		<div class="menu-item">
+		<div class="menu-item" data-item-name="my-account-item">
 			<div class="menu-item-content">
 				<span class="menu-item-icon"><i class="fas fa-address-book"></i></span>
 				<span class="menu-item-title">My Account</span>
@@ -26,7 +26,7 @@
 			<a class="menu-item-link" href="#"></a>
 		</div>
 
-		<div class="menu-item">
+		<div class="menu-item" data-item-name="">
 			<div class="menu-item-content">
 				<span class="menu-item-icon"><i class="fas fa-cogs"></i></span>
 				<span class="menu-item-title">Admin Settings</span>
@@ -57,7 +57,7 @@
 		</div>
 
 		<div class="myaccount-content-details">
-			<div class="myaccount-content-item" id="my-orders-item">
+			<div class="myaccount-content-item active" id="my-orders-item">
 				<div class="content-item-title">
 					<h3>My Orders</h3>
 				</div>
@@ -107,7 +107,7 @@
 				</div>
 			</div>
 
-			<div class="myaccount-content-item" id="my-orders-item">
+			<div class="myaccount-content-item" id="my-communication-item">
 				<div class="content-item-title">
 					<h3>My Communications</h3>
 				</div>
@@ -153,7 +153,7 @@
 				</div>
 			</div>
 
-			<div class="myaccount-content-item" id="my-orders-item">
+			<div class="myaccount-content-item" id="my-account-item">
 				<div class="content-item-title">
 					<h3>My Account</h3>
 				</div>

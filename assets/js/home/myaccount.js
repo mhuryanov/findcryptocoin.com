@@ -18,4 +18,9 @@ sidebar_toggle_btn.click(function(){
 $(".myaccount .sidebar .menu-item").click(function(){
 	$(".myaccount .sidebar .menu-item").removeClass('active');
 	$(this).addClass('active');
+
+	$(".myaccount-content-item").removeClass('active');
+	var selectedId = $(this).data('item-name');
+	$("#" + selectedId).addClass('active');
+	
 });

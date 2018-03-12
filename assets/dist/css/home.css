@@ -373,7 +373,14 @@ body {
 }
 
 .myaccount .myaccount-content .myaccount-content-details .myaccount-content-item{
+    display: none;
     padding: 20px 5%;
+    transition: all 0.5s;
+}
+
+.myaccount .myaccount-content .myaccount-content-details .myaccount-content-item.active{
+    display: block;
+
 }
 
 .myaccount .myaccount-content .myaccount-content-details .myaccount-content-item .content-item-details{

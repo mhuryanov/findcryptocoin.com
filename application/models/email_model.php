@@ -14,7 +14,7 @@ class Email_model extends CI_Model
 				//SMTP & mail configuration
 		$config = array(
 		    'protocol'  => 'smtp',
-		    'smtp_host' => 'ssl://findcryptocoin.com',
+		    'smtp_host' => 'ssl://smtp.findcryptocoin.com',
 		    'smtp_port' => 465,
 		    'smtp_user' => 'info@findcryptocoin.com',
 		    'smtp_pass' => 'kRJBmOnl$BJq',

@@ -42,7 +42,7 @@
 					</div>
 
 					<div class="row" style="margin-top: 20px;justify-content: center;">
-						<button class="see-actions-btn col-md-6">See Actions</button>
+						<a href="<?=base_url()?>user/seeactions" class="see-actions-btn col-md-6">See Actions</a>
 					</div>
 
 					<div class="row" style="margin-top: 10px;">

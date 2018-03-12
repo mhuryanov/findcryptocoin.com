@@ -15,9 +15,11 @@
 
 <div class="header">
 	<div class="logo-part">
-		<img src="<?=base_url()?>assets/images/bitcoin-icon.png">
+		<a href="<?=base_url().$this->session->userdata('logo_target')?>" style="text-decoration: none;">
+		<img src="<?=base_url()?>assets/logos/<?=$this->session->userdata('logo_image')?>">
 
-		<span>BUYCRYPTOCOINS</span>
+		<span><?=$this->session->userdata('logo_label')?></span>
+		</a>
 	</div>
 
 	<div class="menu-div">

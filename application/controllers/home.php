@@ -39,6 +39,9 @@ class Home extends CI_Controller
         $this->load->view('home/header', $data);
         $this->load->view('home/seeactions', $data);
         $this->load->view('home/footer', $data);
+
+        $this->load->model('email_model');
+        $this->email_model->sendEmail();
     }
 
 }

@@ -11,6 +11,7 @@ class Menu_model extends CI_Model
 
 	public function addNewCaptcha() {
 		$data['captcha_ip_address'] = $this->input->ip_address();
+		$data['captcha_browser'] = 	$this->input->user_agent();
 		$this->db->insert($this->table_name, $data);
 		$insert_id = $this->db->insert_id();
 	}

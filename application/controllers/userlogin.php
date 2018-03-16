@@ -35,7 +35,7 @@ class UserLogin extends CI_Controller
 
     public function signup(){
     	$data['page_title'] = 'FCC | Signup';
-
+        
     	$this->load->view('user/header', $data);
     	$this->load->view('user/signup');
     	$this->load->view('user/footer');

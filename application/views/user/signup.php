@@ -15,8 +15,13 @@
 
 	<div class="login-input-div flex">
 		<div class="login-form">
+			<?php
+
+			echo  $_SERVER['REMOTE_ADDR'];
+
+
+			?>
 			<div class="input-item">
-				<?=$this->input->ip_address();?>
 				<input type="email" name="email" placeholder="Email" id="user-email">
 			</div>
 

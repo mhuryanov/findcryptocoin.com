@@ -101,6 +101,45 @@ class Recaptcha
         );
     }
 
+    public function verifyResponseInvisible($response, $remoteIp = null)
+    {
+        $remoteIp = (!empty($remoteIp)) ? $remoteIp : $this->_ci->input->ip_address();
+
+        // Discard empty solution submissions
+        if (empty($response)) {
+            return array(
+                'success' => false,
+                'error-codes' => 'missing-input',
+            );
+        }
+
+        $getResponse = $this->_submitHttpGet(
+            array(
+                'secret' => $this->_invisible_secretKey,
+                'remoteip' => $remoteIp,
+                'response' => $response,
+            )
+        );
+
+        // get reCAPTCHA server response
+        $responses = json_decode($getResponse, true);
+
+        if (isset($responses['success']) and $responses['success'] == true) {
+            $status = true;
+        } else {
+            $status = false;
+            $error = (isset($responses['error-codes'])) ? $responses['error-codes']
+                : 'invalid-input-response';
+        }
+
+
+
+        return array(
+            'success' => $status,
+            'error-codes' => (isset($error)) ? $error : null,
+        );
+    }
+
     /**
      * Render Script Tag
      *

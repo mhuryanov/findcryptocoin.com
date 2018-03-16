@@ -22,4 +22,17 @@ class Menu_model extends CI_Model
         } else {
         }
 	}
+
+	public function getSeeHowToBuy() {
+		$this->db->where('menu_status', 'active');
+		$this->db->where('menu_order', -1);
+		$query = $this->db->get($this->table_name);
+		$seehowtobuy = $query->result_array();
+		return $seehowtobuy[0];
+		// if(!empty($menus)){
+  //           return $seehowtobuy;
+            
+  //       } else {
+  //       }
+	}
 }

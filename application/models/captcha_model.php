@@ -16,17 +16,17 @@ class Captcha_model extends CI_Model
 
 		$getloc = json_decode(file_get_contents("http://ipinfo.io/".$data['captcha_ip_address']."/json"));
 		$data['captcha_location'] = "";
-		if ($getloc->city != "") {
+		if (isset($getloc->city) && $getloc->city != "") {
 			$data['captcha_location'] .= $getloc->city;
 		}
-		if($getloc->region != "") {
+		if(isset($getloc->region) && $getloc->region != "") {
 			$data['captcha_location'] .= $getloc->region;	
 		}
 
-		if ($getloc->country != "") {
+		if (isset($getloc->country) && $getloc->country != "") {
 			$data['captcha_location'] .= $getloc->country;
 		}
- 		$data['captcha_location'] = $getloc->city . ', ' . $getloc->region. ', ' . $getloc->country;
+ 		// $data['captcha_location'] = $getloc->city . ', ' . $getloc->region. ', ' . $getloc->country;
 		$this->db->insert($this->table_name, $data);
 		$insert_id = $this->db->insert_id();
 	}

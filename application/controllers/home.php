@@ -23,10 +23,15 @@ class Home extends CI_Controller
         $data['title'] = "FCC | Home";
         $data['menus'] = $this->currentMenus;
         $data['coin_list'] = $this->coinlist_model->getAllCoinList();
+        $data['seehowtobuy_label'] = $this->menu_model->getSeeHowToBuy()['menu_label'];
+        $data['seehowtobuy_target'] = $this->menu_model->getSeeHowToBuy()['menu_target'];
+
         $this->load->model('background_model');
         $this->load->view('home/header', $data);
         $this->load->view('home/homepage', $data);
         $this->load->view('home/footer', $data);
+
+        // var_dump($this->menu_model->getSeeHowToBuy());
     }
 
     public function myaccount() {

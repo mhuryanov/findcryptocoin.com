@@ -97,7 +97,7 @@
 			    <input type="text" class="form-control" placeholder="adasdjf1231asdkjf12324jsld">
 			  </div>
 			  <div class="form-group">
-			    <span>Dont have BTC?</span> <a href="#">See how to buy.</a>
+			    <span>Dont have BTC?</span> <a href="<?=$seehowtobuy_target?>" target="_blank"><?=$seehowtobuy_label?></a>
 			  </div>
 			</form>
 	      </div>

@@ -34,6 +34,7 @@ function onInvisibleSubmit(token) {
 
 	if (token == "") {
 		validation = false;
+		grecaptcha.reset();
 	}
 
 	if (!validation){return;}

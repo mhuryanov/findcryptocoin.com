@@ -114,13 +114,13 @@ class UserLogin extends CI_Controller
         $return_data = array();   
 
         $recaptcha = $this->input->post('token');
-        $response = $this->recaptcha->verifyResponse($recaptcha);
+        $response = $this->recaptcha->verifyResponseInvisible($recaptcha);
 
         if (isset($response['success']) and $response['success'] === true) {
           $this->captcha_model->addNewCaptcha();
         } else {
             $return_data['code'] = 'error';
-            $return_data['message'] = 'reCatcha is failed.';
+            $return_data['message'] =  $response['error-codes'];
             echo json_encode($return_data);
             exit();   
         }

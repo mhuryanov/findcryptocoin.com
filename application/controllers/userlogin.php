@@ -14,6 +14,8 @@ class UserLogin extends CI_Controller
         {
             redirect('/home');
         }
+
+        $this->load->model('captcha_model');
         
     }
 
@@ -52,7 +54,7 @@ class UserLogin extends CI_Controller
         $response = $this->recaptcha->verifyResponse($recaptcha);
 
         if (isset($response['success']) and $response['success'] === true) {
-          
+          $this->captcha_model->addNewCaptcha();
         } else {
             $return_data['code'] = 'error';
             $return_data['message'] = $response['error-codes'];
@@ -112,7 +114,7 @@ class UserLogin extends CI_Controller
         $response = $this->recaptcha->verifyResponse($recaptcha);
 
         if (isset($response['success']) and $response['success'] === true) {
-          
+          $this->captcha_model->addNewCaptcha();
         } else {
             $return_data['code'] = 'error';
             $return_data['message'] = 'reCatcha is failed.';

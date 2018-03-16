@@ -50,4 +50,9 @@ class Home extends CI_Controller
         // $this->email_model->sendEmail();
     }
 
+    public function logout(){
+        $this->session->unset_userdata('user-login');
+        redirect('/');
+    }
+
 }

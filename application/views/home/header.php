@@ -33,8 +33,8 @@
 			<?php
 		}?>
 		<div class="menu-item">
-			<p>Hello</p>
-			<p><a href="#">Log out</a></p>
+			<p>Hello <?=$this->session->userdata('user-name')?></p>
+			<p><a href="<?=base_url()?>user/logout">Log out</a></p>
 		</div>
 	</div>
 

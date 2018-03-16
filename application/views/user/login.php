@@ -17,7 +17,7 @@
 		<div class="login-form">
 			<form id="login-form" action="<?=base_url()?>user/b_signin">
 			<div class="input-item">
-				<input type="email" name="email" required="" id="user-email">
+				<input type="email" name="email" required="" id="user-email" placeholder="Email">
 			</div>
 
 			<div class="input-item">

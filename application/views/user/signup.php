@@ -28,7 +28,10 @@
 			</div>
 
 			<div class="input-item">
-				<input type="button" value="Sign up" class="login-btn" id="signup-btn">
+				<!-- <input type="button" value="Sign up" class="login-btn" id="signup-btn"> -->
+
+				<?php echo $this->recaptcha->getInvisibleWidget(array('class'=> 'g-recaptcha login-btn', 'value'=>'Sign up', 'id'=>'signup-btn'));?>
+				<?php echo $this->recaptcha->getScriptTag();?>
 			</div>
 
 			<div class="input-item" style="margin-top: 20px;text-align: center;">

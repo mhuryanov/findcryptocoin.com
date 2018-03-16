@@ -15,7 +15,7 @@
 
 	<div class="login-input-div flex">
 		<div class="login-form">
-			<form id="login-form" action="">
+			<form id="login-form" action="<?=base_url()?>user/b_signin">
 			<div class="input-item">
 				<input type="email" name="email" required="" id="user-email">
 			</div>
@@ -31,6 +31,11 @@
 				<div>
 					<a class="forgot-password" href="<?=base_url()?>user/forgotpassword">Forgot password?</a>
 				</div>
+			</div>
+
+			<div class="input-item captcha-item">
+				<?php echo $this->recaptcha->getWidget();?>
+				<?php echo $this->recaptcha->getScriptTag();?>
 			</div>
 
 			<div class="input-item">

@@ -12,6 +12,7 @@ class Menu_model extends CI_Model
 
 	public function getCurrentMenus(){
 		$this->db->where('menu_status', 'active');
+		$this->db->where('menu_order !=', '-1');
 		$this->db->order_by('menu_order', 'ASC');
 		$query = $this->db->get($this->table_name);
 		$menus = $query->result_array();

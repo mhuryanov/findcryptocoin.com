@@ -14,11 +14,15 @@ class Home extends CI_Controller
         }
         $this->load->model('menu_model');
         $this->currentMenus = $this->menu_model->getCurrentMenus();
+
+        $this->load->model('coinlist_model');
+        $this->load->model('actionlist_model');
     }
 
     public function index() {
         $data['title'] = "FCC | Home";
         $data['menus'] = $this->currentMenus;
+        $data['coin_list'] = $this->coinlist_model->getAllCoinList();
         $this->load->model('background_model');
         $this->load->view('home/header', $data);
         $this->load->view('home/homepage', $data);
@@ -36,6 +40,8 @@ class Home extends CI_Controller
     public function seeactions() {
         $data['title'] = 'FCC | See Actions';
         $data['menus'] = $this->currentMenus;
+        $data['action_list'] = $this->actionlist_model->getAllActionList();
+
         $this->load->view('home/header', $data);
         $this->load->view('home/seeactions', $data);
         $this->load->view('home/footer', $data);

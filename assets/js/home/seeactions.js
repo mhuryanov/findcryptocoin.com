@@ -1,0 +1,1 @@
+$('#seeaction_list_table').DataTable();

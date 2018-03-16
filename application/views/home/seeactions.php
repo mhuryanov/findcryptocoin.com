@@ -1,74 +1,34 @@
 <div class="seeactions">
-	<h2 class="seeactions-title">Listing from peers around the world</h2>
+	<h2 class="seeactions-title">See Actions</h2>
 	<p class="seeactions-subdescription">A platform to exchange the coins with peers at the desired rate</p>
 
-	<table class="table table-striped table-bordered table-list">
+	<table class="table table-striped table-bordered table-list" id="seeaction_list_table">
 		<thead>
 			<th>#</th>
 			<th>Name</th>
 			<th>Count</th>
-			<th>Member</th>
+			<th>Actions</th>
+			<th>Counter</th>
+			<th>User Name</th>
 		</thead>
 		<tbody>
+			<?php $i = 1;?>
+			<?php foreach ($action_list as $action_item): ?>
 			<tr>
-				<td>1</td>
-				<td>Bitcoin</td>
-				<td>2</td>
+				<td><?php echo $i; $i++;?></td>
+				<td><?=$action_item['coin_name']?></td>
+				<td><?=$action_item['action_count']?></td>
 				<td>
 					<button class="btn btn-info"><i class="fas fa-arrow-up"></i></button>
-					<span>200</span>
 					<button class="btn btn-info"><i class="fas fa-arrow-down"></i></button>
-					<span>cryptobody</span>
 				</td>
+				<td><?=$action_item['action_counter']?></td>
+				<td><?=$action_item['name']?></td>
 			</tr>
+			<?php endforeach ?>
 
-			<tr>
-				<td>1</td>
-				<td>Bitcoin</td>
-				<td>2</td>
-				<td>
-					<button class="btn btn-info"><i class="fas fa-arrow-up"></i></button>
-					<span>200</span>
-					<button class="btn btn-info"><i class="fas fa-arrow-down"></i></button>
-					<span>cryptobody</span>
-				</td>
-			</tr>
-
-			<tr>
-				<td>1</td>
-				<td>Bitcoin</td>
-				<td>2</td>
-				<td>
-					<button class="btn btn-info"><i class="fas fa-arrow-up"></i></button>
-					<span>200</span>
-					<button class="btn btn-info"><i class="fas fa-arrow-down"></i></button>
-					<span>cryptobody</span>
-				</td>
-			</tr>
-
-			<tr>
-				<td>1</td>
-				<td>Bitcoin</td>
-				<td>2</td>
-				<td>
-					<button class="btn btn-info"><i class="fas fa-arrow-up"></i></button>
-					<span>200</span>
-					<button class="btn btn-info"><i class="fas fa-arrow-down"></i></button>
-					<span>cryptobody</span>
-				</td>
-			</tr>
-
-			<tr>
-				<td>1</td>
-				<td>Bitcoin</td>
-				<td>2</td>
-				<td>
-					<button class="btn btn-info"><i class="fas fa-arrow-up"></i></button>
-					<span>200</span>
-					<button class="btn btn-info"><i class="fas fa-arrow-down"></i></button>
-					<span>cryptobody</span>
-				</td>
-			</tr>
 		</tbody>
 	</table>
 </div>
+
+<script type="text/javascript" src="<?=base_url()?>assets/js/home/seeactions.js"></script>

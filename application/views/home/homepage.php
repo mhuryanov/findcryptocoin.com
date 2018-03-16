@@ -23,14 +23,17 @@
 					<div class="row">
 					  <div class="col-lg-12">
 					    <div class="input-group">
-					      <input type="text" class="form-control" aria-label="Text input with dropdown button">
+					      <input type="number" class="form-control" aria-label="Text input with dropdown button" id="coin-amount-input" placeholder="123.00">
 					      <div class="input-group-btn">
-					        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					          ETH
-					        </button>
+					        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-coin-id="<?=$coin_list[0]['coin_id']?>" id="selected-coin-button"><?=$coin_list[0]['coin_name']?></button>
 					        <div class="dropdown-menu dropdown-menu-right">
-					          <a class="dropdown-item" href="#">ETH</a>
-					          <a class="dropdown-item" href="#">Altcoin</a>
+					          <?php
+					          	foreach ($coin_list as $coin_item) {
+					          		?>
+									<a class="dropdown-item coin-item" href="#" data-coin-name="<?=$coin_item['coin_name']?>" data-coin-id="<?=$coin_item['coin_id']?>"><?=$coin_item['coin_name']?></a>
+					          		<?php
+					          	}
+					          ?>
 					        </div>
 					      </div>
 					    </div>
@@ -80,7 +83,7 @@
 	      <div class="modal-body">
 	        <form action="/action_page.php">
 			  <div class="form-group">
-			    <input type="text" class="form-control" placeholder="You are buying 123.00 ETH">
+			    <input type="number" class="form-control" placeholder="You are buying 123.00 ETH" id="modal-coin-amount-input">
 			  </div>
 			  <div class="form-group">
 			    <label>Target Wallet address</label>

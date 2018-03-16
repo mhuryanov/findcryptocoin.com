@@ -7,7 +7,17 @@
 				<div class="col-md-3 col-sm-12">
 					<p>San Francisco | Singapore</p>
 					<p>Info@findcryptocoin.com</p>
-					<div></div>
+					<div class="socials">
+						<div class="row">
+							<?php foreach ($socials as $social_item): ?>
+								<div class="col-md-1 col-xl-1 col-sm-1">
+									<a href="<?=$social_item['social_target']?>" style="font-size: 20px; color: #333;" target="_blank">
+										<i class="<?=$social_item['social_icon']?>"></i>
+									</a>
+								</div>
+							<?php endforeach ?>
+						</div>
+					</div>
 				</div>
 
 				<div class="col-md-5 col-sm-12">

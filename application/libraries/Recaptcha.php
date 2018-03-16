@@ -48,8 +48,8 @@ class Recaptcha
     {
         $url = self::site_verify_url.'?'.http_build_query($data);
         $response = file_get_contents($url);
-        var_dump($response);
-        exit();
+        // var_dump($response);
+        // exit();
         return $response;
     }
 

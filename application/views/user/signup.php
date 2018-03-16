@@ -16,6 +16,7 @@
 	<div class="login-input-div flex">
 		<div class="login-form">
 			<div class="input-item">
+				<?=$this->input->ip_address();?>
 				<input type="email" name="email" placeholder="Email" id="user-email">
 			</div>
 

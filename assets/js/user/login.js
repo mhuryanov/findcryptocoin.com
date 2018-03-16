@@ -33,6 +33,7 @@ $("#login-btn").click(function(){
 		data: {
 			email: user_email,
 			password: user_password,
+			captcha:  captcha
 		},
 		dataType: 'json',
 		type: 'post'
@@ -42,7 +43,7 @@ $("#login-btn").click(function(){
 			$("#login-success-alert").show();
 			$("#login-success-alert .alert-data").html(data.message);
 
-			// setTimeout(function(){ window.location = baseURL + 'home' }, 3000);
+			setTimeout(function(){ window.location = baseURL + 'home' }, 3000);
 		} else {
 			$("#login-error-alert").show();
 			$("#login-success-alert").hide();

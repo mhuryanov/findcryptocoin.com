@@ -48,14 +48,16 @@ class UserLogin extends CI_Controller
         $this->form_validation->set_rules('email','Email','trim|required|valid_email|xss_clean|max_length[128]');
         $this->form_validation->set_rules('password','Password','required|max_length[20]');
 
-        $recaptcha = $this->input->post('g-recaptcha-response');
+        $recaptcha = $this->input->post('captcha');
         $response = $this->recaptcha->verifyResponse($recaptcha);
 
         if (isset($response['success']) and $response['success'] === true) {
           
         } else {
             $return_data['code'] = 'error';
-            $return_data['message'] = 'reCatcha is failed.';
+            $return_data['message'] = $response['error-codes'];
+            echo json_encode($return_data);
+            exit();
         }
          
         $return_data = array();

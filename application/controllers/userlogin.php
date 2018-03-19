@@ -97,12 +97,12 @@ class UserLogin extends CI_Controller
             {
                 foreach ($result as $res)
                 {   
-                    // $user_email = $res->email;
-                    // $email_explods = explode("@", $user_email);
+                    $user_email = $res->email;
+                    $email_explods = explode("@", $user_email);
                     $user_session = array(
                         'user-id'=>$res->userId,
                         'user-login'=> true,
-                        'user-name' => $res->name == "" //? $email_explods[0]: $res->name
+                        'user-name' => $res->name == "" ? $email_explods[0]: $res->name
                     );
                                     
                     $this->session->set_userdata($user_session);

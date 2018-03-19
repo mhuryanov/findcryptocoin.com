@@ -37,6 +37,7 @@
 		}?>
 		<?php 
 		 $isLoggedIn = $this->session->userdata('user-login');
+		 echo $isLoggedIn;
         	if(isset($isLoggedIn) && $isLoggedIn == TRUE){
 			?>
 			<div class="menu-item">

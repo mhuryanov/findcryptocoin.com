@@ -22,6 +22,8 @@ class Home extends CI_Controller
         $this->load->model('coinlist_model');
         $this->load->model('actionlist_model');
         $this->load->model("broadcast_model");
+        $this->load->model("contactus_model");
+        $this->load->model('email_model');     
     }
 
     public function index() {
@@ -74,8 +76,8 @@ class Home extends CI_Controller
         $this->load->view('home/seeactions', $data);
         $this->load->view('home/footer', $data);
 
-        // $this->load->model('email_model');
-        // $this->email_model->sendEmail();
+       
+        
     }
 
     public function logout(){
@@ -86,6 +88,33 @@ class Home extends CI_Controller
         }
         $this->session->unset_userdata('user-login');
         redirect('/');
+    }
+
+    public function contact_us(){
+        $this->load->library('form_validation');    
+        $this->form_validation->set_rules('email','Email','trim|required|valid_email|xss_clean|max_length[128]');
+        $this->form_validation->set_rules('subject','Subject','required|max_length[50]');
+        $this->form_validation->set_rules('message','Message','required|max_length[5000]');
+        if($this->form_validation->run() == FALSE)
+        {
+            $this->session->set_flashdata('flushdata_error', 'Contact Us form validataion is not valied');
+            redirect($_SERVER['HTTP_REFERER']);
+        } else {
+            $data['contact_email'] = $this->input->post('email');
+            $data['contact_subject'] = $this->input->post('subject');
+            $data['contact_msg'] = $this->input->post('message');
+            $insert_id = $this->contactus_model->addNewContact($data);
+            if($insert_id){
+                $emailStatus = $this->email_model->sendEmail($data['contact_email']);
+                
+                $this->session->set_flashdata('flushdata_success', 'We will let you know shortly. '. $emailStatus);  
+               
+            } else {
+                $this->session->set_flashdata('flushdata_error', 'Database Error! Please try again');
+            }
+            
+            redirect($_SERVER['HTTP_REFERER']);
+        }
     }
 
     public function b_action_add() {

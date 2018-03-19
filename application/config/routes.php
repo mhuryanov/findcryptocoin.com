@@ -80,6 +80,7 @@ $route['home'] = 'home';
 $route['user/myaccount'] = 'home/myaccount';
 $route['user/seeactions'] = 'home/seeactions';
 $route['user/logout'] = 'home/logout';
+$route['contact_us'] = 'home/contact_us';
 
 	// backend
 $route['user/b_signup'] = 'userlogin/b_signup';

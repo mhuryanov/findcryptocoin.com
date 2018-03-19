@@ -33,26 +33,27 @@
 						  </div>
 						</form>
 					</div>
+					<form action="contact_us" method="post">
+						<div class="row">
+							<div class="col-md-6">
+								<input type="email" name="email" placeholder="Email *" class="footer-input" required="">
+							</div>
 
-					<div class="row">
-						<div class="col-md-6">
-							<input type="email" name="" placeholder="Email *" class="footer-input">
+							<div class="col-md-6">
+								<input type="text" name="subject" placeholder="Subject *" class="footer-input" required="">
+							</div>
 						</div>
 
-						<div class="col-md-6">
-							<input type="email" name="" placeholder="Subject *" class="footer-input">
+						<div class="row">
+							<div class="col-md-12">
+								<textarea name="message" placeholder="Message *" required="" rows="5" class="footer-input" style="resize: none;"></textarea>
+							</div>
 						</div>
-					</div>
 
-					<div class="row">
-						<div class="col-md-12">
-							<textarea placeholder="Message *" rows="5" class="footer-input" style="resize: none;"></textarea>
+						<div class="">
+							<button class="footer-input" style="border: 0;">Send</button>
 						</div>
-					</div>
-
-					<div class="">
-						<button class="footer-input" style="border: 0;">Send</button>
-					</div>
+					</form>
 				</div>
 
 				<div class="col-md-2 col-sm-12"></div>

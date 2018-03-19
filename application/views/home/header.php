@@ -88,3 +88,25 @@
 		}
 	}
 ?>
+
+<?php
+$this->load->helper('form');
+$flushdata_error = $this->session->flashdata('flushdata_error');
+if($flushdata_error)
+{
+    ?>
+    <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <?php echo $this->session->flashdata('flushdata_error'); ?>                    
+    </div>
+<?php } 
+
+$flushdata_success = $this->session->flashdata('flushdata_success');
+if($flushdata_success)
+{
+    ?>
+    <div class="alert alert-success alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <?php echo $this->session->flashdata('flushdata_success'); ?>                    
+    </div>
+<?php } ?>

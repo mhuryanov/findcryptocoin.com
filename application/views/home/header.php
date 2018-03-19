@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title><?=$title?></title>
+	<meta name="description" content="Findcryptocoin is for Findcryptocoin">
 	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/dist/css/home.css">
 	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/dist/css/user.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">

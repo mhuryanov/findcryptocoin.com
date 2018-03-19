@@ -36,17 +36,22 @@
 			<?php
 		}?>
 		<?php 
-		 $isLoggedIn = $this->session->userdata('user-login');
-		 echo $isLoggedIn;
-        	if(isset($isLoggedIn) && $isLoggedIn == TRUE){
+		 
+		  $isLoggedIn = $this->session->userdata('user-login');
+	        if(!isset($isLoggedIn) || $isLoggedIn != TRUE)
+	        {
+	           
+	        } else{
+	        	?>
+	        		<div class="menu-item">
+						<p>Hello <?=$this->session->userdata('user-name')?></p>
+						<p><a href="<?=base_url()?>user/logout">Log out</a></p>
+					</div>
+		
+	        	<?php
+	        }
 			?>
-			<div class="menu-item">
-				<p>Hello <?=$this->session->userdata('user-name')?></p>
-				<p><a href="<?=base_url()?>user/logout">Log out</a></p>
-			</div>
-			<?php
-		}
-		?>
+		
 		
 	</div>
 

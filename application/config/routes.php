@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "userlogin";
+$route['default_controller'] = "home";
 $route['404_override'] = 'error';
 
 
@@ -84,4 +84,7 @@ $route['user/logout'] = 'home/logout';
 	// backend
 $route['user/b_signup'] = 'userlogin/b_signup';
 $route['user/b_signin'] = 'userlogin/b_signin';
+
+$route['user/b_action_add'] = 'home/b_action_add';
+$route['user/b_action_down'] = 'home/b_action_down';
 

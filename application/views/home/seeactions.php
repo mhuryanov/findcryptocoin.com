@@ -1,5 +1,5 @@
 <div class="seeactions">
-	<h2 class="seeactions-title">See Actions</h2>
+	<h2 class="seeactions-title">See Auctions</h2>
 	<p class="seeactions-subdescription">A platform to exchange the coins with peers at the desired rate</p>
 
 	<table class="table table-striped table-bordered table-list" id="seeaction_list_table">
@@ -19,10 +19,10 @@
 				<td><?=$action_item['coin_name']?></td>
 				<td><?=$action_item['action_count']?></td>
 				<td>
-					<button class="btn btn-info"><i class="fas fa-arrow-up"></i></button>
-					<button class="btn btn-info"><i class="fas fa-arrow-down"></i></button>
+					<button class="btn btn-info action-up-btn" data-action-id="<?=$action_item['action_id']?>"><i class="fas fa-arrow-up"></i></button>
+					<button class="btn btn-info action-down-btn" data-action-id="<?=$action_item['action_id']?>"><i class="fas fa-arrow-down"></i></button>
 				</td>
-				<td><?=$action_item['action_counter']?></td>
+				<td class="action-counter-<?=$action_item['action_id']?>"><?=$action_item['action_counter']?></td>
 				<td><?=$action_item['name']?></td>
 			</tr>
 			<?php endforeach ?>

@@ -7,12 +7,12 @@ class Home extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $isLoggedIn = $this->session->userdata('user-login');
+        // $isLoggedIn = $this->session->userdata('user-login');
         
-        if(!isset($isLoggedIn) || $isLoggedIn != TRUE)
-        {
-            redirect('/');
-        }
+        // if(!isset($isLoggedIn) || $isLoggedIn != TRUE)
+        // {
+        //     redirect('/');
+        // }
         $this->load->model('menu_model');
         $this->currentMenus = $this->menu_model->getCurrentMenus();
 
@@ -41,6 +41,11 @@ class Home extends CI_Controller
     }
 
     public function myaccount() {
+         $isLoggedIn = $this->session->userdata('user-login');
+        if(!isset($isLoggedIn) || $isLoggedIn != TRUE)
+        {
+            redirect('/user');
+        }
         $data['title'] = 'FCC | MY Account';
         $data['menus'] = $this->currentMenus;
         $data['socials'] = $this->socials;
@@ -51,6 +56,11 @@ class Home extends CI_Controller
     }
 
     public function seeactions() {
+         $isLoggedIn = $this->session->userdata('user-login');
+        if(!isset($isLoggedIn) || $isLoggedIn != TRUE)
+        {
+            redirect('/user');
+        }
         $data['title'] = 'FCC | See Actions';
         $data['menus'] = $this->currentMenus;
         $data['socials'] = $this->socials;
@@ -65,8 +75,33 @@ class Home extends CI_Controller
     }
 
     public function logout(){
+        $isLoggedIn = $this->session->userdata('user-login');
+        if(!isset($isLoggedIn) || $isLoggedIn != TRUE)
+        {
+            redirect('/user');
+        }
         $this->session->unset_userdata('user-login');
         redirect('/');
+    }
+
+    public function b_action_add() {
+        $action_id = $this->input->post('action_id');
+        $action = $this->actionlist_model->getActionById($action_id);
+        $action_counter = $action[0]->action_counter;
+        $data['action_counter'] = 1 + $action_counter;
+        $this->actionlist_model->updateActionById($action_id, $data);
+        $return_data['action_counter'] = $data['action_counter'];
+        echo json_encode($return_data);  
+    }
+
+    public function b_action_down() {
+        $action_id = $this->input->post('action_id');
+        $action = $this->actionlist_model->getActionById($action_id);
+        $action_counter = $action[0]->action_counter;
+        $data['action_counter'] = -1 + $action_counter;
+        $this->actionlist_model->updateActionById($action_id, $data);
+        $return_data['action_counter'] = $data['action_counter'];
+        echo json_encode($return_data);  
     }
 
 }

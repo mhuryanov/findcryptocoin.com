@@ -83,7 +83,7 @@
 	      <div class="modal-body">
 	        <form action="/action_page.php">
 			  <div class="form-group">
-			    <input type="number" class="form-control" placeholder="You are buying 123.00 ETH" id="modal-coin-amount-input">
+			    <input type="text" class="form-control" placeholder="You are buying 123.00 ETH" id="modal-coin-amount-input" readonly="" value="You are buying 123.00 ETH">
 			  </div>
 			  <div class="form-group">
 			    <label>Target Wallet address</label>

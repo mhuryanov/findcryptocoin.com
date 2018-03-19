@@ -1,7 +1,14 @@
 $("#buy-now-btn").click(function(){
-	$("#wallet-detail").fadeIn("slow");
+	
 	var coin_amount = $("#coin-amount-input").val();
-	$("#modal-coin-amount-input").val(coin_amount);
+	var coin_name = $("#selected-coin-button").html();
+	if(coin_amount == "" || coin_amount < 0){
+		alert("Please Input valied ammount");
+		return;
+	}
+	$("#modal-coin-amount-input").val("You are buying " + coin_amount + " " + coin_name);
+	$("#wallet-detail").fadeIn("slow");
+
 });
 
 $("#wallet-close-x").click(function(){

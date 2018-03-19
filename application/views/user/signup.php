@@ -41,7 +41,7 @@
 			</div>
 		</div>
 
-		<div class="middle-line"></div>
+		<!-- <div class="middle-line"></div>
 			
 		<div class="social-login">
 			<div class="social-login-item">
@@ -51,7 +51,7 @@
 			<div class="social-login-item">
 				<button class="google-login-btn">Log in with Google+</button>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </div>
 

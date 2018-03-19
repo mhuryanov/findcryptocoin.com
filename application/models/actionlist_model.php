@@ -22,4 +22,16 @@ class Actionlist_model extends CI_Model
 		$query = $this->db->get();
 		return $query->result_array();
 	}
+
+	public function getActionById($action_id){
+		$this->db->where('action_id', $action_id);
+
+		$query = $this->db->get($this->table_name);
+		return $query->result();
+	}
+
+	public function updateActionById($action_id, $data){
+		$this->db->where('action_id', $action_id);
+		$this->db->update($this->table_name, $data);
+	}
 }

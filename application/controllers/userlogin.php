@@ -16,19 +16,31 @@ class UserLogin extends CI_Controller
         }
 
         $this->load->model('captcha_model');
+        $this->load->model('menu_model');
+        $this->currentMenus = $this->menu_model->getCurrentMenus();
+
+        $this->load->model('social_model');
+        $this->socials = $this->social_model->getSocials();
+
+        $this->load->model('coinlist_model');
+        $this->load->model('actionlist_model');
         
     }
 
     public function index(){
-    	$data['page_title'] = 'FCC | Login';
+    	$data['title'] = 'FCC | Login';
+        $data['menus'] = $this->currentMenus;
+        $data['socials'] = $this->socials;
 
-    	$this->load->view('user/header', $data);
-    	$this->load->view('user/login');
-    	$this->load->view('user/footer');
+       
+
+    	$this->load->view('home/header', $data);
+    	$this->load->view('user/login', $data);
+    	$this->load->view('home/footer', $data);
     }
 
     public function forgotpassword(){
-    	$data['page_title'] = 'FCC | ForgotPassword';
+    	$data['title'] = 'FCC | ForgotPassword';
 
     	$this->load->view('user/header', $data);
     	$this->load->view('user/forgotpassword');
@@ -36,11 +48,13 @@ class UserLogin extends CI_Controller
     }
 
     public function signup(){
-    	$data['page_title'] = 'FCC | Signup';
-        
-    	$this->load->view('user/header', $data);
+    	$data['title'] = 'FCC | Signup';
+        $data['menus'] = $this->currentMenus;
+        $data['socials'] = $this->socials;
+
+    	$this->load->view('home/header', $data);
     	$this->load->view('user/signup');
-    	$this->load->view('user/footer');
+    	$this->load->view('home/footer', $data);
     }
 
     // backend

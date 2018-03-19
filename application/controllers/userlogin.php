@@ -93,18 +93,20 @@ class UserLogin extends CI_Controller
             {
                 foreach ($result as $res)
                 {   
-                    $user_email = $res->email;
-                    $email_explods = explode("@", $user_email);
-                    $sessionArray = array(
+                    // $user_email = $res->email;
+                    // $email_explods = explode("@", $user_email);
+                    $user_session = array(
                         'user-id'=>$res->userId,
                         'user-login'=> true,
-                        'user-name' => $res->name == "" ? $email_explods[0]: $res->name
+                        'user-name' => $res->name == "" //? $email_explods[0]: $res->name
                     );
                                     
-                    $this->session->set_userdata($sessionArray);
+                    $this->session->set_userdata($user_session);
                     
                     $return_data['code'] = 'success';
                     $return_data['message'] = 'Signin is successed!';
+                    echo json_encode($return_data);
+                    exit();
                     
                 }
             }
@@ -112,10 +114,12 @@ class UserLogin extends CI_Controller
             {   
                 $return_data['code'] = 'error';
                 $return_data['message'] = 'Email or password mismatch';
+                echo json_encode($return_data);
+                exit();
             }
                         
         }
-        echo json_encode($return_data);
+        
     }
 
     public function b_signup() {

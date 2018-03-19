@@ -21,12 +21,14 @@ class Home extends CI_Controller
 
         $this->load->model('coinlist_model');
         $this->load->model('actionlist_model');
+        $this->load->model("broadcast_model");
     }
 
     public function index() {
         $data['title'] = "FCC | Home";
         $data['menus'] = $this->currentMenus;
         $data['socials'] = $this->socials;
+        $data['broadcasts'] = $this->broadcast_model->getCurrentBroadcast();
 
         $data['coin_list'] = $this->coinlist_model->getAllCoinList();
         $data['seehowtobuy_label'] = $this->menu_model->getSeeHowToBuy()['menu_label'];
@@ -49,6 +51,7 @@ class Home extends CI_Controller
         $data['title'] = 'FCC | MY Account';
         $data['menus'] = $this->currentMenus;
         $data['socials'] = $this->socials;
+        $data['broadcasts'] = $this->broadcast_model->getCurrentBroadcast();
 
         $this->load->view('home/header', $data);
         $this->load->view('home/myaccount', $data);
@@ -65,6 +68,7 @@ class Home extends CI_Controller
         $data['menus'] = $this->currentMenus;
         $data['socials'] = $this->socials;
         $data['action_list'] = $this->actionlist_model->getAllActionList();
+        $data['broadcasts'] = $this->broadcast_model->getCurrentBroadcast();
 
         $this->load->view('home/header', $data);
         $this->load->view('home/seeactions', $data);

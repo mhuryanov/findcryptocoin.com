@@ -90,7 +90,7 @@
 			    <label>Target Wallet address</label>
 			    <input type="text" class="form-control" placeholder="Enter your wallet address where you">
 			  </div>
-			  <div class="row" style="justify-content: center;">
+			  <div class="row flex" style="justify-content: center;">
 			    <button class="btn btn-success" type="button">Confirm</button>
 			  </div>
 			  <div class="form-group">

@@ -22,3 +22,4 @@ $(".coin-item").click(function(){
 	$("#selected-coin-button").html(coin_name);
 	$("#selected-coin-button").data('coin-id', coin_id);
 });
+

@@ -3,6 +3,7 @@
 <head>
 	<title><?=$title?></title>
 	<meta name="description" content="Findcryptocoin is for Findcryptocoin">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/dist/css/home.css">
 	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/dist/css/user.css">
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
@@ -58,6 +59,39 @@
 		
 	</div>
 
+	<div class="menu-div-mobile close">
+		<span class="menu-bar-open">
+			<i class="fas fa-bars"></i>
+		</span>
+
+		<div class="menu-content">
+			<span class="menu-bar-close">
+			<i class="fas fa-times"></i>
+		</span>
+			<?php foreach($menus as $menu){
+			?>
+			<a href="<?=base_url().$menu['menu_target']?>" class="menu-item"><?=$menu['menu_label']?></a>
+			<?php
+		}?>
+		<?php 
+		 
+		  $isLoggedIn = $this->session->userdata('user-login');
+	        if(!isset($isLoggedIn) || $isLoggedIn != TRUE)
+	        {
+	           
+	        } else{
+	        	?>
+	        		<div class="menu-item">
+						<p>Hello <?=$this->session->userdata('user-name')?></p>
+						<p><a href="<?=base_url()?>user/logout">Log out</a></p>
+					</div>
+		
+	        	<?php
+	        }
+			?>
+		</div>
+	</div>
+
 	<div class="header-background"></div>
 
 </div>
@@ -70,7 +104,7 @@
 </div>
 <!-- content -->
 <div class="content">
-	
+
 <?php
 	// $broadcasts = $this->session->userdata('broadcasts');
 	

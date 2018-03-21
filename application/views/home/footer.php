@@ -23,7 +23,7 @@
 				<div class="col-md-2 col-sm-12">
 					<p><b>Company</b></p>
 					<?php
-					var_dump($footer); 
+					// var_dump($footer); 
 					if($footer['about_us_status'] == 'active'){
 					?>
 						<p><a class="footer-item" href="<?=$footer['about_us_target']?>">- About Us</a></p>
@@ -53,9 +53,23 @@
 				</div>
 
 				<div class="col-md-2 col-sm-12">
-					<p><a class="footer-item" href="#">- Blog</a></p>
-					<p><a class="footer-item" href="#">- Affiliate program</a></p>
-					<p><a class="footer-item" href="#">- Donate BTC </a></p>
+					<?php
+					if($footer['legal_status'] == 'active'){
+					?>
+					<p><a class="footer-item" href="<?=$footer['blog_target']?>">- Blog</a></p>
+					<?php
+					}
+					if($footer['affilate_status'] == 'active'){
+					?>
+					<p><a class="footer-item" href="<?=$footer['affilate_target']?>">- Affiliate program</a></p>
+					<?php
+					}
+					if($footer['donate_status'] == 'active'){
+					?>
+					<p><a class="footer-item" href="<?=$footer['donate_target']?>">- Donate BTC </a></p>
+					<?php
+					}
+					?>
 				</div>
 
 				<div class="col-md-5 col-sm-12">
@@ -116,6 +130,16 @@
 	</div>
 	<!-- footer end -->
   <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<script type="text/javascript">
+	$(".menu-bar-open").click(function(){
+		$(".menu-div-mobile").addClass("open");
+		$(".menu-div-mobile").removeClass("close");
+	});
 
+	$(".menu-bar-close").click(function(){
+		$(".menu-div-mobile").addClass("close");
+		$(".menu-div-mobile").removeClass("open");
+	});
+</script>
 </body>
 </html>

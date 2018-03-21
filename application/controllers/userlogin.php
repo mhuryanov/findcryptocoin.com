@@ -48,10 +48,12 @@ class UserLogin extends CI_Controller
     	$data['title'] = 'FCC | ForgotPassword';
         $data['broadcasts'] = $this->broadcast_model->getCurrentBroadcast();
         $data['footer'] = $this->footer;
+          $data['menus'] = $this->currentMenus;
+        $data['socials'] = $this->socials;
 
-    	$this->load->view('user/header', $data);
+    	$this->load->view('home/header', $data);
     	$this->load->view('user/forgotpassword');
-    	$this->load->view('user/footer');
+    	$this->load->view('home/footer');
     }
 
     public function signup(){

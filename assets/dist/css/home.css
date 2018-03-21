@@ -79,6 +79,7 @@ body {
     position: relative;
     justify-content: space-around;
     padding: 100px 0;
+    flex-wrap: wrap;
 }
 
 .home-content .buy-bitcoin-form{
@@ -374,6 +375,7 @@ body {
 
 .myaccount .myaccount-content .myaccount-content-details{
     padding: 20px 5%;
+    overflow: scroll;  
 }
 
 .myaccount .myaccount-content .myaccount-content-details .myaccount-content-item{
@@ -427,4 +429,106 @@ body {
 .footer-item:hover{
     text-decoration: none;
     color: white;
+}
+
+.forgotpassword-content{
+    margin: 20px auto;
+}
+
+.menu-div-mobile{
+    display: none;
+}
+
+.menu-div-mobile .menu-content{
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+   .header{
+    /*font-size: 30px;*/
+   }
+
+   .socials .row{
+    display: flex;
+   }
+
+   .seeactions{
+    margin:  10px 10px;
+   }
+
+   .myaccount{
+    margin: 10px 5px;
+   }
+
+   .menu-div{
+    display: none!important;
+   }
+
+   .menu-div-mobile{
+        display: block;
+        color: white;
+        z-index: 1;
+        font-size: 20px;
+        transition: all 0.5s;
+    }
+
+    .menu-div-mobile.open .menu-bar-open{
+        display: none;
+    }
+
+    .menu-div-mobile.open .menu-bar-close{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 68px;
+    }
+
+    .menu-div-mobile .menu-bar-close{
+        color: black;
+        display: none;
+    }
+
+    .menu-div-mobile.close .menu-bar-open{
+        display: block;
+        color: white;
+    }
+
+    .menu-div-mobile.close .menu-bar-close{
+        display: none;
+    }
+
+    .menu-div-mobile .menu-content{
+        transition: all 0.5s;
+    }
+
+     .menu-div-mobile.close .menu-content{
+        width: 0px;
+     }
+
+    .menu-div-mobile.open .menu-content{
+        display: flex;
+        position: fixed;
+        right: 0;
+        width: 70%;
+        text-align: center;
+        background: white;
+        top: 0px;
+        height: 100%;
+        z-index: 1;
+        opacity: 0.9;
+        flex-direction: column;
+        padding-top: 90px;
+    }
+
+
+
+    .menu-div-mobile.close .menu-content{
+        display: none;
+    }
+
+    .menu-item{
+        margin-top: 20px;
+        color: #4080b9;
+    }
+
 }

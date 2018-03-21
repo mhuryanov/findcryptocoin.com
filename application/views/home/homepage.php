@@ -24,6 +24,7 @@
 					  <div class="col-lg-12">
 					    <div class="input-group">
 					      <input type="number" class="form-control" aria-label="Text input with dropdown button" id="coin-amount-input" placeholder="123.00">
+
 					      <div class="input-group-btn">
 					        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-coin-id="<?=$coin_list[0]['coin_id']?>" id="selected-coin-button"><?=$coin_list[0]['coin_name']?></button>
 					        <div class="dropdown-menu dropdown-menu-right">
@@ -40,12 +41,12 @@
 					  </div>
 					</div>
 
-					<div class="row" style="margin-top: 20px;justify-content: center;">
+					<div class="row" style="margin-top: 20px;justify-content: center; display: flex;">
 						<button class="buy-now-btn col-md-6" id="buy-now-btn">Buy Now</button>
 					</div>
 
-					<div class="row" style="margin-top: 20px;justify-content: center;">
-						<a href="<?=base_url()?>user/seeactions" class="see-actions-btn col-md-6">See Actions</a>
+					<div class="row" style="margin-top: 20px;justify-content: center; display: flex;">
+						<a href="<?=base_url()?>user/seeactions" class="see-actions-btn col-md-6">See Auctions</a>
 					</div>
 
 					<div class="row" style="margin-top: 10px;">

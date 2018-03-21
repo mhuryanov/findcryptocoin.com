@@ -3,7 +3,7 @@
 	<div class="footer">
 		<div class="footer-content">
 			<div class="row">
-				<div class="col-md-2 col-sm-12"></div>
+				
 
 				<div class="col-md-3 col-sm-12">
 					<p>San Francisco | Singapore</p>
@@ -19,6 +19,43 @@
 							<?php endforeach ?>
 						</div>
 					</div>
+				</div>
+				<div class="col-md-2 col-sm-12">
+					<p><b>Company</b></p>
+					<?php
+					var_dump($footer); 
+					if($footer['about_us_status'] == 'active'){
+					?>
+						<p><a class="footer-item" href="<?=$footer['about_us_target']?>">- About Us</a></p>
+					<?php
+					} 
+					if($footer['careers_status'] == 'active'){
+					?>
+					<p><a class="footer-item" href="<?=$footer['careers_target']?>">- Careers</a></p>
+					<?php
+					}
+					if($footer['press_status'] == 'active'){	
+					?>
+					<p><a class="footer-item" href="<?=$footer['press_target']?>">- Press</a></p>
+					<?php
+					}
+					if($footer['legal_status'] == 'active'){
+					?>
+					<p><a class="footer-item" href="<?=$footer['legal_target']?>">- Legal & Privacy</a></p>
+					<?php
+					}
+					if($footer['faq_status'] == 'active'){
+					?>
+					<p><a class="footer-item" href="<?=$footer['faq_target']?>">- FAQ</a></p>
+					<?php
+					}
+					?>
+				</div>
+
+				<div class="col-md-2 col-sm-12">
+					<p><a class="footer-item" href="#">- Blog</a></p>
+					<p><a class="footer-item" href="#">- Affiliate program</a></p>
+					<p><a class="footer-item" href="#">- Donate BTC </a></p>
 				</div>
 
 				<div class="col-md-5 col-sm-12">
@@ -56,14 +93,21 @@
 					</form>
 				</div>
 
-				<div class="col-md-2 col-sm-12"></div>
+				
 			</div>
 
 			<div class="row" style="background: #2d3643; margin:0 -20px;">
 				<div class="col-md-2"></div>
 
 				<div class="col-md-10">
-					<p>@ 2018 by findcryptocoin.com. All rights reserved</p>
+					<p>
+						<a href="<?=base_url().$this->session->userdata('logo_target')?>" style="text-decoration: none;">
+						<img src="<?=base_url()?>assets/logos/<?=$this->session->userdata('logo_image')?>">
+
+						
+						</a>
+					 2018 by findcryptocoin.com. All rights reserved
+					</p>
 				</div>
 			</div>
 		</div>

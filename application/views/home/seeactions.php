@@ -6,8 +6,8 @@
 		<thead>
 			<th>#</th>
 			<th>Name</th>
-			<th>Count</th>
-			<th>Actions</th>
+			<!-- <th>Count</th> -->
+			<!-- <th>Auctions</th> -->
 			<th>Counter</th>
 			<th>User Name</th>
 		</thead>
@@ -17,12 +17,13 @@
 			<tr>
 				<td><?php echo $i; $i++;?></td>
 				<td><?=$action_item['coin_name']?></td>
-				<td><?=$action_item['action_count']?></td>
-				<td>
-					<button class="btn btn-info action-up-btn" data-action-id="<?=$action_item['action_id']?>"><i class="fas fa-arrow-up"></i></button>
-					<button class="btn btn-info action-down-btn" data-action-id="<?=$action_item['action_id']?>"><i class="fas fa-arrow-down"></i></button>
+				
+				<td style="display: flex;flex-direction: column; align-items: center;">
+					<button class="btn btn-default action-up-btn" data-action-id="<?=$action_item['action_id']?>"><i class="fas fa-chevron-up"></i></button>
+					<span class="action-counter-<?=$action_item['action_id']?>"><?=$action_item['action_counter']?></span>
+					<button class="btn btn-default action-down-btn" data-action-id="<?=$action_item['action_id']?>"><i class="fas fa-chevron-down"></i></button>
 				</td>
-				<td class="action-counter-<?=$action_item['action_id']?>"><?=$action_item['action_counter']?></td>
+				<!-- <td class="action-counter-<?=$action_item['action_id']?>"><?=$action_item['action_counter']?></td> -->
 				<td><?=$action_item['name']?></td>
 			</tr>
 			<?php endforeach ?>

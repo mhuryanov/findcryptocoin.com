@@ -2,6 +2,7 @@
 
 class UserLogin extends CI_Controller
 {
+    public $footer;
     public function __construct()
     {
         parent::__construct();
@@ -25,6 +26,8 @@ class UserLogin extends CI_Controller
         $this->load->model('coinlist_model');
         $this->load->model('actionlist_model');
         $this->load->model("broadcast_model");
+        $this->load->model('footer_model');     
+        $this->footer = $this->footer_model->getCurrentFooter();
         
     }
 
@@ -33,7 +36,7 @@ class UserLogin extends CI_Controller
         $data['menus'] = $this->currentMenus;
         $data['socials'] = $this->socials;
         $data['broadcasts'] = $this->broadcast_model->getCurrentBroadcast();
-
+        $data['footer'] = $this->footer;
        
 
     	$this->load->view('home/header', $data);
@@ -44,6 +47,7 @@ class UserLogin extends CI_Controller
     public function forgotpassword(){
     	$data['title'] = 'FCC | ForgotPassword';
         $data['broadcasts'] = $this->broadcast_model->getCurrentBroadcast();
+        $data['footer'] = $this->footer;
 
     	$this->load->view('user/header', $data);
     	$this->load->view('user/forgotpassword');
@@ -55,6 +59,7 @@ class UserLogin extends CI_Controller
         $data['menus'] = $this->currentMenus;
         $data['socials'] = $this->socials;
         $data['broadcasts'] = $this->broadcast_model->getCurrentBroadcast();
+        $data['footer'] = $this->footer;
 
     	$this->load->view('home/header', $data);
     	$this->load->view('user/signup');

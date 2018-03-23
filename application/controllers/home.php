@@ -27,6 +27,9 @@ class Home extends CI_Controller
         $this->load->model('email_model'); 
         $this->load->model('footer_model');     
         $this->footer = $this->footer_model->getCurrentFooter();
+        $this->load->model("order_model");
+        $this->load->model("communication_model");
+        $this->load->model('user_model');
     }
 
     public function index() {
@@ -44,8 +47,6 @@ class Home extends CI_Controller
         $this->load->view('home/header', $data);
         $this->load->view('home/homepage', $data);
         $this->load->view('home/footer', $data);
-
-        // var_dump($this->menu_model->getSeeHowToBuy());
     }
 
     public function myaccount() {
@@ -59,18 +60,28 @@ class Home extends CI_Controller
         $data['socials'] = $this->socials;
         $data['broadcasts'] = $this->broadcast_model->getCurrentBroadcast();
         $data['footer'] = $this->footer;
+        $data['myorders'] = $this->order_model->getMyOrders();
+        $coms = $this->communication_model->getMyCommunications();
+
+        foreach ($coms as $comitem) {
+            $comitem['com_user_from'] = $this->user_model->getUserInfoById($comitem['com_from'])[0];
+            $comitem['com_user_to'] = $this->user_model->getUserInfoById($comitem['com_to'])[0];
+            $data['mycoms'][] = $comitem;
+        }
+
+        $data['myaccount'] = $this->user_model->getUserInfoById($this->session->userdata('user-id'))[0];
 
         $this->load->view('home/header', $data);
         $this->load->view('home/myaccount', $data);
         $this->load->view('home/footer', $data);
     }
 
-    public function seeactions() {
-         $isLoggedIn = $this->session->userdata('user-login');
-        if(!isset($isLoggedIn) || $isLoggedIn != TRUE)
-        {
-            redirect('/user');
-        }
+    public function seeauctions() {
+        //  $isLoggedIn = $this->session->userdata('user-login');
+        // if(!isset($isLoggedIn) || $isLoggedIn != TRUE)
+        // {
+        //     redirect('/user');
+        // }
         $data['title'] = 'FCC | See Actions';
         $data['menus'] = $this->currentMenus;
         $data['socials'] = $this->socials;
@@ -143,4 +154,28 @@ class Home extends CI_Controller
         echo json_encode($return_data);  
     }
 
+    public function b_save_firstname(){
+        $data['first_name'] = $this->input->post('firstname');
+        $this->user_model->updateCurrentUser($data);
+    }
+
+    public function b_save_lastname(){
+        $data['last_name'] = $this->input->post('lastname');
+        $this->user_model->updateCurrentUser($data);
+    }
+
+    public function b_save_email(){
+        $data['email'] = $this->input->post('email');
+        $this->user_model->updateCurrentUser($data);
+    }
+
+    public function b_save_username(){
+        $data['name'] = $this->input->post('username');
+        $this->user_model->updateCurrentUser($data);
+    }
+
+    public function b_save_phone(){
+        $data['mobile'] = $this->input->post('phone');
+        $this->user_model->updateCurrentUser($data);
+    }
 }

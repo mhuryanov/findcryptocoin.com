@@ -71,37 +71,16 @@
 							<th></th>
 						</thead>
 						<tbody>
+							<?php foreach ($myorders as $myorderitem): ?>
 							<tr>
-								<td>ID1234567890</td>
-								<td>Buy 100 BTC</td>
-								<td>Jan-01-2018</td>
-								<td>Not Submitted</td>
-								<td><button>View</button></td>
-							</tr>
-
-							<tr>
-								<td>ID1234567890</td>
-								<td>Buy 100 BTC</td>
-								<td>Jan-01-2018</td>
-								<td>Not Submitted</td>
-								<td><button>View</button></td>
-							</tr>
-
-							<tr>
-								<td>ID1234567890</td>
-								<td>Buy 100 BTC</td>
-								<td>Jan-01-2018</td>
-								<td>Not Submitted</td>
-								<td><button>View</button></td>
-							</tr>
-
-							<tr>
-								<td>ID1234567890</td>
-								<td>Buy 100 BTC</td>
-								<td>Jan-01-2018</td>
-								<td>Not Submitted</td>
-								<td><button>View</button></td>
-							</tr>
+								<td>ID<?=$myorderitem['order_id']?></td>
+								<td><?=$myorderitem['order_details']?></td>
+								<td><?=$myorderitem['order_updated']?></td>
+								<td><?=$myorderitem['order_status']?></td>
+								<td><button class="btn btn-primary"><i class="fas fa-pencil-alt"></i> View</button></td>
+							</tr>								
+							<?php endforeach ?>
+							
 						</tbody>
 					</table>
 				</div>
@@ -120,33 +99,24 @@
 							<th>Message</th>
 						</thead>
 						<tbody>
+							<?php foreach ($mycoms as $mycomitem): ?>
 							<tr>
-								<td></td>
-								<td>Base(You)</td>
-								<td>Mark</td>
-								<td>View Contact<td>
-							</tr>
+								<td>
+									<button class="btn btn-primary">
+										<?php if ($mycomitem['com_kind'] == 'out'): ?>
+											<i class="fas fa-long-arrow-alt-right"></i>	
+										<?php endif ?>
 
-							<tr>
-								<td></td>
-								<td>Base(You)</td>
-								<td>Mark</td>
-								<td>View Contact<td>
-							</tr>
-
-							<tr>
-								<td></td>
-								<td>Base(You)</td>
-								<td>Mark</td>
-								<td>View Contact<td>
-							</tr>
-
-							<tr>
-								<td></td>
-								<td>Base(You)</td>
-								<td>Mark</td>
-								<td>View Contact<td>
-							</tr>
+										<?php if ($mycomitem['com_kind'] == 'in'): ?>
+											<i class="fas fa-long-arrow-alt-left"></i>
+										<?php endif ?>
+									</button>
+								</td>
+								<td><?=$mycomitem['com_user_from']['name']?></td>
+								<td><?=$mycomitem['com_user_to']['name']?></td>
+								<td><button class="btn btn-warning"><i class="fas fa-pencil-alt"></i> View Contact</button></td>
+							</tr>	
+							<?php endforeach ?>
 
 						</tbody>
 					</table>
@@ -158,6 +128,7 @@
 					<h3>My Account</h3>
 				</div>
 				<div class="content-item-details">
+					
 					<table class="table table-striped table-bordered table-list">
 						<thead>
 							<th>ID</th>
@@ -170,33 +141,45 @@
 							<tr>
 								<td>1</td>
 								<td>First Name</td>
-								<td><input type="" class="form-control" placeholder="Mark" name=""></td>
-								<td><button class="btn btn-success">Save</button></td>
+								<td><input type="" class="form-control" placeholder="First Name" name="" value="<?=$myaccount['first_name']?>" id="firstname-input"></td>
+								<td><button class="btn btn-success" id="save-firstname-btn">Save</button></td>
 								
 							</tr>
 
 							<tr>
-								<td>1</td>
-								<td>First Name</td>
-								<td><input type="" class="form-control" placeholder="Mark" name=""></td>
-								<td><button class="btn btn-success">Save</button></td>
+								<td>2</td>
+								<td>Last Name</td>
+								<td><input type="" class="form-control" placeholder="Last Name" name="" value="<?=$myaccount['last_name']?>" id="lastname-input"></td>
+								<td><button class="btn btn-success" id="save-lastname-btn">Save</button></td>
 								
 							</tr>
 
 							<tr>
-								<td>1</td>
-								<td>First Name</td>
-								<td><input type="" class="form-control" placeholder="Mark" name=""></td>
-								<td><button class="btn btn-success">Save</button></td>
-								
+								<td>3</td>
+								<td>Email</td>
+								<td><input type="" class="form-control" placeholder="Email" name="" value="<?=$myaccount['email']?>" id="email-input"></td>
+								<td><button class="btn btn-success" id="save-email-btn">Save</button></td>
 							</tr>
 
 							<tr>
-								<td>1</td>
-								<td>First Name</td>
-								<td><input type="" class="form-control" placeholder="Mark" name=""></td>
+								<td>4</td>
+								<td>User Name</td>
+								<td><input type="" class="form-control" placeholder="User Name" name=""  value="<?=$myaccount['name']?>" id="username-input"></td>
+								<td><button class="btn btn-success" id="save-username-btn">Save</button></td>
+							</tr>
+
+							<tr>
+								<td>5</td>
+								<td>Password</td>
+								<td><input type="password" class="form-control" placeholder="******" name="" ></td>
 								<td><button class="btn btn-success">Save</button></td>
-								
+							</tr>
+
+							<tr>
+								<td>6</td>
+								<td>Phone</td>
+								<td><input type="text" class="form-control" placeholder="1-(555)-555-5555" name=""  value="<?=$myaccount['mobile']?>" id="phone-input"></td>
+								<td><button class="btn btn-success"  id="save-phone-btn">Save</button></td>
 							</tr>
 							
 						</tbody>

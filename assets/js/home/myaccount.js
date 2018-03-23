@@ -24,3 +24,63 @@ $(".myaccount .sidebar .menu-item").click(function(){
 	$("#" + selectedId).addClass('active');
 	
 });
+
+$("#save-firstname-btn").click(function(){
+	var firstname = $("#firstname-input").val();
+
+	$.ajax({
+		url : baseURL + 'user/b_save_firstname',
+		data: {
+			firstname: firstname
+		},
+		type: 'post'
+	});
+});
+
+$("#save-lastname-btn").click(function(){
+	var lastname = $("#lastname-input").val();
+
+	$.ajax({
+		url : baseURL + 'user/b_save_lastname',
+		data: {
+			lastname: lastname
+		},
+		type: 'post'
+	});
+});
+
+$("#save-email-btn").click(function(){
+	var email = $("#email-input").val();
+
+	$.ajax({
+		url : baseURL + 'user/b_save_email',
+		data: {
+			email: email
+		},
+		type: 'post'
+	});
+});
+
+$("#save-username-btn").click(function(){
+	var username = $("#username-input").val();
+
+	$.ajax({
+		url : baseURL + 'user/b_save_username',
+		data: {
+			username: username
+		},
+		type: 'post'
+	});
+});
+
+$("#save-phone-btn").click(function(){
+	var phone = $("#phone-input").val();
+
+	$.ajax({
+		url : baseURL + 'user/b_save_phone',
+		data: {
+			phone: phone
+		},
+		type: 'post'
+	});
+});

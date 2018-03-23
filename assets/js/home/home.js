@@ -3,7 +3,7 @@ $("#buy-now-btn").click(function(){
 	var coin_amount = $("#coin-amount-input").val();
 	var coin_name = $("#selected-coin-button").html();
 	if(coin_amount == "" || coin_amount < 0){
-		alert("Please Input valied ammount");
+		alert("Please Input valid amount");
 		return;
 	}
 	$("#modal-coin-amount-input").val("You are buying " + coin_amount + " " + coin_name);

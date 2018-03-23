@@ -7,6 +7,8 @@ class User_model extends CI_Model
      * @param string $searchText : This is optional search text
      * @return number $count : This is row count
      */
+    public $table_name = "tbl_users";
+
     function userListingCount($searchText = '')
     {
         $this->db->select('BaseTbl.userId, BaseTbl.email, BaseTbl.name, BaseTbl.mobile, Role.role');
@@ -194,6 +196,22 @@ class User_model extends CI_Model
         
         $user = $query->result();
         return $user;
+    }
+
+    function getUserInfoById($userId)
+    {
+       
+        $this->db->from('tbl_users');
+        $this->db->where('isDeleted', 0);
+        $this->db->where('userId', $userId);
+        $query = $this->db->get();
+        
+        return $query->result_array();
+    }
+
+    function updateCurrentUser($data){
+        $this->db->where('userId', $this->session->userdata('user-id'));
+        $this->db->update($this->table_name, $data);
     }
 }
 

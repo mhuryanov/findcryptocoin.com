@@ -78,7 +78,7 @@ $route['user/forgotpassword'] = 'userlogin/forgotpassword';
 $route['user/signup'] = 'userlogin/signup';
 $route['home'] = 'home';
 $route['user/myaccount'] = 'home/myaccount';
-$route['user/seeactions'] = 'home/seeactions';
+$route['user/seeauctions'] = 'home/seeauctions';
 $route['user/logout'] = 'home/logout';
 $route['contact_us'] = 'home/contact_us';
 
@@ -89,3 +89,8 @@ $route['user/b_signin'] = 'userlogin/b_signin';
 $route['user/b_action_add'] = 'home/b_action_add';
 $route['user/b_action_down'] = 'home/b_action_down';
 
+$route['user/b_save_firstname'] = 'home/b_save_firstname';
+$route['user/b_save_lastname'] = 'home/b_save_lastname';
+$route['user/b_save_email'] = 'home/b_save_email';
+$route['user/b_save_username'] = 'home/b_save_username';
+$route['user/b_save_phone'] = 'home/b_save_phone';

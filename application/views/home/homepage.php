@@ -46,7 +46,7 @@
 					</div>
 
 					<div class="row" style="margin-top: 20px;justify-content: center; display: flex;">
-						<a href="<?=base_url()?>user/seeactions" class="see-actions-btn col-md-6">See Auctions</a>
+						<a href="<?=base_url()?>user/seeauctions" class="see-actions-btn col-md-6">See Auctions</a>
 					</div>
 
 					<div class="row" style="margin-top: 10px;">
@@ -57,7 +57,7 @@
 
 					<div class="row" style="margin-top: 10px;">
 						<div class="col-md-12">
-							<p style="color:rgba(61, 155, 233, 1); opacity: 0.8;">With just $1 worth of BTC. become a member and exchange cryptocurrency for lifetime. <a href="#">Sign up</a> now</p>
+							<p style="color:rgba(61, 155, 233, 1); opacity: 0.8;">With just $1 worth of BTC. become a member and exchange cryptocurrency for lifetime. <a href="<?=base_url()?>user/signup">Sign up</a> now</p>
 						</div>
 					</div>
 

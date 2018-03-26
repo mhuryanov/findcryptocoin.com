@@ -8,7 +8,7 @@
 				<div class="col-md-8">
 					<div class="col-md-3 col-sm-12">
 						<p>San Francisco | Singapore</p>
-						<p>Info@findcryptocoin.com</p>
+						<p><a href="mailto:info@findcryptocoin.com">info@findcryptocoin.com</a></p>
 						<div class="socials">
 							<div class="row">
 								<?php foreach ($socials as $social_item): ?>

@@ -15,7 +15,7 @@
 			
 			<div class="buy-form-content">
 				<div class="title">
-					Bitcoin to Altcoin trading exchanging
+					Bitcoin to <span id="exchange-coin-name"><?=$coin_list[0]['coin_name']?></span> trading exchanging
 				</div>
 				
 				<div class="subtitle">No verification required!</div>

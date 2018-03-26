@@ -21,5 +21,6 @@ $(".coin-item").click(function(){
 	var coin_id = $(this).data('coin-id');
 	$("#selected-coin-button").html(coin_name);
 	$("#selected-coin-button").data('coin-id', coin_id);
+	$("#exchange-coin-name").html(coin_name);
 });
 

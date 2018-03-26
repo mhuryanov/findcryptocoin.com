@@ -78,16 +78,40 @@
 						<tbody>
 							<?php foreach ($myorders as $myorderitem): ?>
 							<tr>
-								<td>ID<?=$myorderitem['order_id']?></td>
-								<td><?=$myorderitem['order_details']?></td>
-								<td><?=$myorderitem['order_updated']?></td>
-								<td><?=$myorderitem['order_status']?></td>
-								<td><button class="btn btn-primary"><i class="fas fa-pencil-alt"></i> View</button></td>
+								<td class="transaction-id">ID<?=$myorderitem['order_id']?></td>
+								<td class="order-detail"><?=$myorderitem['order_details']?></td>
+								<td class="order-date"><?=$myorderitem['order_updated']?></td>
+								<td class="order-status"><?=$myorderitem['order_status']?></td>
+								<td><button class="btn btn-primary order-view-detail" data-toggle="modal" data-target="#myorder-detail-modal"><i class="fas fa-pencil-alt"></i> View</button></td>
 							</tr>								
 							<?php endforeach ?>
 							
 						</tbody>
 					</table>
+
+					<!-- Modal -->
+					<div id="myorder-detail-modal" class="modal fade" role="dialog">
+					  <div class="modal-dialog">
+
+					    <!-- Modal content-->
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal">&times;</button>
+					        <h4 class="modal-title">Order Detail</h4>
+					      </div>
+					      <div class="modal-body order-detail-modal-body">
+					       	<p><label>Transaction ID : </label><span class="transaction-id"></span></p>
+					       	<p><label>Details: </label><span class="order-detail"></span></p>
+					       	<p><label>Date : </label><span class="order-date"></span></p>
+					       	<p><label>Status : </label><span class="order-status"></span></p>
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					      </div>
+					    </div>
+
+					  </div>
+					</div>
 				</div>
 			</div>
 
@@ -106,7 +130,7 @@
 						<tbody>
 							<?php foreach ($mycoms as $mycomitem): ?>
 							<tr>
-								<td>
+								<td class="in-or-out">
 									<button class="btn btn-primary">
 										<?php if ($mycomitem['com_kind'] == 'out'): ?>
 											<i class="fas fa-long-arrow-alt-right"></i>	
@@ -117,14 +141,38 @@
 										<?php endif ?>
 									</button>
 								</td>
-								<td><?=$mycomitem['com_user_from']['name']?></td>
-								<td><?=$mycomitem['com_user_to']['name']?></td>
-								<td><button class="btn btn-warning"><i class="fas fa-pencil-alt"></i> View Contact</button></td>
+								<td class="from-user"><?=$mycomitem['com_user_from']['name']?></td>
+								<td class="to-user"><?=$mycomitem['com_user_to']['name']?></td>
+								<td><button class="btn btn-warning view-contact-modal-btn" data-toggle="modal" data-target="#view-contact-modal"><i class="fas fa-pencil-alt"></i> View Contact</button></td>
 							</tr>	
 							<?php endforeach ?>
 
 						</tbody>
 					</table>
+
+					<!-- Modal -->
+					<div id="view-contact-modal" class="modal fade" role="dialog">
+					  <div class="modal-dialog">
+
+					    <!-- Modal content-->
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal">&times;</button>
+					        <h4 class="modal-title">View Contact</h4>
+					      </div>
+					      <div class="modal-body view-contact-modal-body">
+					        <p><label>In/Out : </label><span class="in-or-out"></span></p>
+					        <p><label>From : </label><span class="from-user"></span></p>
+					        <p><label>To : </label><span class="to-user"></span></p>
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					      </div>
+					    </div>
+
+					  </div>
+					</div>
+
 				</div>
 			</div>
 

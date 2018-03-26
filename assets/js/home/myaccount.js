@@ -124,3 +124,27 @@ function showMyAccountAction(status = 'success', messageBody){
 	}
 	
 }
+
+$(".order-view-detail").click(function(){
+	var parent = $(this).parent().parent();
+	var id = parent.children('.transaction-id').text();
+	var detail = parent.children('.order-detail').text();
+	var date = parent.children('.order-date').text();
+	var status = parent.children('.order-status').text();
+	
+	$(".order-detail-modal-body .transaction-id").text(id);
+	$(".order-detail-modal-body .order-detail").text(detail);
+	$(".order-detail-modal-body .order-date").text(date);
+	$(".order-detail-modal-body .order-status").text(status);
+});
+
+$(".view-contact-modal-btn").click(function(){
+	var parent = $(this).parent().parent();
+	var in_or_out = parent.children('.in-or-out').html();
+	var from = parent.children('.from-user').text();
+	var to = parent.children('.to-user').text();
+	
+	$(".view-contact-modal-body .in-or-out").html(in_or_out);
+	$(".view-contact-modal-body .from-user").text(from);
+	$(".view-contact-modal-body .to-user").text(to);
+});

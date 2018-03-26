@@ -53,7 +53,7 @@
 					<!-- </div>
 	        		<div class="menu-item"> -->
 						
-						<p style="margin: 0"><a href="<?=base_url()?>user/logout">Log out</a></p>
+						<p style="margin: 0;text-align: center;"><a href="<?=base_url()?>user/logout">Log out</a></p>
 					</div>
 		
 	        	<?php

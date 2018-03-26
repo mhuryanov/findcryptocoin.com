@@ -46,7 +46,7 @@
 					</div>
 
 					<div class="row" style="margin-top: 20px;justify-content: center; display: flex;">
-						<a href="<?=base_url()?>user/seeauctions" class="see-actions-btn col-md-6">See Auctions</a>
+						<a href="<?=base_url()?>user/seeauctions" class="see-actions-btn col-md-6" target="_blank">See Auctions</a>
 					</div>
 
 					<div class="row" style="margin-top: 10px;">

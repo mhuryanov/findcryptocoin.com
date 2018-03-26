@@ -137,6 +137,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
+    font-weight: 500;
 }
 
 
@@ -164,7 +166,7 @@ body {
 
 .footer p{
     color: white;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 500;
 }
 
@@ -173,7 +175,7 @@ body {
     padding: 5px;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 1);
-    color: #000000;
+    color: #ffffff;
     margin: 0 0 5px;
     width: 100%;
     -webkit-transition: 0.5s ease all;
@@ -185,12 +187,12 @@ body {
     -webkit-appearance: none;
     border-radius: 0;
     font: normal normal normal 18px/1.4em baskervillemtw01-smbdit,serif;
-    border-bottom: 1px solid rgba(0, 0, 0, 1);
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
     font-style: italic;
 }
 
 .footer .footer-input::placeholder{
-    color: black;
+    color: white;
 }
 
 .footer .footer-input:focus{

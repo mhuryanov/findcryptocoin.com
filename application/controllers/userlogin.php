@@ -28,6 +28,7 @@ class UserLogin extends CI_Controller
         $this->load->model("broadcast_model");
         $this->load->model('footer_model');     
         $this->footer = $this->footer_model->getCurrentFooter();
+        $this->load->model("email_model");
         
     }
 
@@ -38,7 +39,6 @@ class UserLogin extends CI_Controller
         $data['broadcasts'] = $this->broadcast_model->getCurrentBroadcast();
         $data['footer'] = $this->footer;
        
-
     	$this->load->view('home/header', $data);
     	$this->load->view('user/login', $data);
     	$this->load->view('home/footer', $data);
@@ -109,7 +109,8 @@ class UserLogin extends CI_Controller
                     $user_session = array(
                         'user-id'=>$res->userId,
                         'user-login'=> true,
-                        'user-name' => $res->name == "" ? $email_explods[0]: $res->name
+                        'user-name' => $res->name == "" ? $email_explods[0]: $res->name,
+                        'user-email' => $user_email
                     );
                                     
                     $this->session->set_userdata($user_session);
@@ -158,6 +159,7 @@ class UserLogin extends CI_Controller
         {
             $return_data['code'] = 'error';
             $return_data['message'] = 'Please all data correctly!';
+
             echo json_encode($return_data);
             exit();   
         }
@@ -183,9 +185,15 @@ class UserLogin extends CI_Controller
             if($result > 0) {
                 $return_data['code'] = 'success';
                 $return_data['message'] = 'Signup is successed!';
+                $this->email_model->sendEmail($email, 'signup');
+
+                echo json_encode($return_data);
+                exit();
             }else{
                 $return_data['code'] = 'error';
                 $return_data['message'] = 'Database transaction is faild!';
+                echo json_encode($return_data);
+                exit();
             }
         }
         echo json_encode($return_data);

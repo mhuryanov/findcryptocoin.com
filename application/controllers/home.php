@@ -8,12 +8,6 @@ class Home extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        // $isLoggedIn = $this->session->userdata('user-login');
-        
-        // if(!isset($isLoggedIn) || $isLoggedIn != TRUE)
-        // {
-        //     redirect('/');
-        // }
         $this->load->model('menu_model');
         $this->currentMenus = $this->menu_model->getCurrentMenus();
 
@@ -50,11 +44,7 @@ class Home extends CI_Controller
     }
 
     public function myaccount() {
-         $isLoggedIn = $this->session->userdata('user-login');
-        if(!isset($isLoggedIn) || $isLoggedIn != TRUE)
-        {
-            redirect('/user');
-        }
+        $this->checkLogin();
         $data['title'] = 'FCC | MY Account';
         $data['menus'] = $this->currentMenus;
         $data['socials'] = $this->socials;
@@ -77,11 +67,7 @@ class Home extends CI_Controller
     }
 
     public function seeauctions() {
-        //  $isLoggedIn = $this->session->userdata('user-login');
-        // if(!isset($isLoggedIn) || $isLoggedIn != TRUE)
-        // {
-        //     redirect('/user');
-        // }
+        
         $data['title'] = 'FCC | See Actions';
         $data['menus'] = $this->currentMenus;
         $data['socials'] = $this->socials;
@@ -92,17 +78,10 @@ class Home extends CI_Controller
         $this->load->view('home/header', $data);
         $this->load->view('home/seeactions', $data);
         $this->load->view('home/footer', $data);
-
-       
-        
     }
 
     public function logout(){
-        $isLoggedIn = $this->session->userdata('user-login');
-        if(!isset($isLoggedIn) || $isLoggedIn != TRUE)
-        {
-            redirect('/user');
-        }
+        $this->checkLogin();
         $this->session->unset_userdata('user-login');
         redirect('/');
     }
@@ -134,6 +113,30 @@ class Home extends CI_Controller
         }
     }
 
+    public function disableaccount(){
+        $this->checkLogin();
+        $data['user_status'] = 'disabled';
+        $this->user_model->updateCurrentUser($data);
+        $this->email_model->sendEmail($this->session->userdata('user-email'),'disable');
+        $this->logout();
+    }
+
+    public function enableaccount(){
+        $this->checkLogin();
+        $data['user_status'] = 'enabled';
+        $this->user_model->updateCurrentUser($data);
+        redirect('user/myaccount');
+    }
+
+    public function removeaccount(){
+        $this->checkLogin();
+        $data['isDeleted'] = 1;
+        $this->user_model->updateCurrentUser($data);
+        $this->email_model->sendEmail($this->session->userdata('user-email'),'delete');
+        $this->logout();
+    }
+
+// backend
     public function b_action_add() {
         $action_id = $this->input->post('action_id');
         $action = $this->actionlist_model->getActionById($action_id);
@@ -177,5 +180,13 @@ class Home extends CI_Controller
     public function b_save_phone(){
         $data['mobile'] = $this->input->post('phone');
         $this->user_model->updateCurrentUser($data);
+    }
+
+    public function checkLogin(){
+        $isLoggedIn = $this->session->userdata('user-login');
+        if(!isset($isLoggedIn) || $isLoggedIn != TRUE)
+        {
+            redirect('/user');
+        }
     }
 }

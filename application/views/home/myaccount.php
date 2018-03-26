@@ -57,6 +57,11 @@
 		</div>
 
 		<div class="myaccount-content-details">
+
+			<div id="myaccount-action-alert-body">
+				
+			</div>
+
 			<div class="myaccount-content-item active" id="my-orders-item">
 				<div class="content-item-title">
 					<h3>My Orders</h3>
@@ -124,8 +129,65 @@
 			</div>
 
 			<div class="myaccount-content-item" id="my-account-item">
-				<div class="content-item-title">
-					<h3>My Account</h3>
+				<div class="content-item-title" style="display: flex; justify-content: space-between; align-items: center;">
+					<h3>My Account</h3> 
+					<div>
+						<?php if ($myaccount['user_status'] == 'enabled'): ?>
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#disable_account_modal">Disable Account</button>
+						<?php endif ?>
+
+						<?php if ($myaccount['user_status'] == 'disabled'): ?>
+							<a href="<?=base_url()?>user/enableaccount" class="btn btn-default">Enable Account</a>
+						<?php endif ?>
+						
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#remove_account_modal">Remove Account</button>
+
+						<!-- Modal -->
+						  <div class="modal fade" id="disable_account_modal" role="dialog">
+						    <div class="modal-dialog">
+						    
+						      <!-- Modal content-->
+						      <div class="modal-content">
+						        <div class="modal-header">
+						          <button type="button" class="close" data-dismiss="modal">&times;</button>
+						          <h4 class="modal-title">Disable Account</h4>
+						        </div>
+						        <div class="modal-body">
+						          <p>Do you want to disable account really?</p>
+						          <small class="text-warning">Disble account is temporarily action, so if you login again, the you can get the option for enable your account.</small>
+						        </div>
+						        <div class="modal-footer">
+						        <a href="<?=base_url()?>user/disableaccount" class="btn btn-danger" >Yes, I do</a>
+						          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						        </div>
+						      </div>
+						      
+						    </div>
+						  </div>
+
+						  <!-- Modal -->
+						  <div class="modal fade" id="remove_account_modal" role="dialog">
+						    <div class="modal-dialog">
+						    
+						      <!-- Modal content-->
+						      <div class="modal-content">
+						        <div class="modal-header">
+						          <button type="button" class="close" data-dismiss="modal">&times;</button>
+						          <h4 class="modal-title">Remove Account</h4>
+						        </div>
+						        <div class="modal-body">
+						          <p>Do you want to remove account really?</p>
+						          <small class="text-danger">Please be careful, if you remove account, you can only get back your account by contacting to support.</small>
+						        </div>
+						        <div class="modal-footer">
+						        <a href="<?=base_url()?>user/removeaccount" class="btn btn-danger" >Yes, I do</a>
+						          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						        </div>
+						      </div>
+						      
+						    </div>
+						  </div>
+					</div>
 				</div>
 				<div class="content-item-details">
 					

@@ -13,7 +13,7 @@
 							<div class="row">
 								<?php foreach ($socials as $social_item): ?>
 									<div class="col-md-1 col-xl-1 col-sm-1">
-										<a href="<?=$social_item['social_target']?>" style="font-size: 20px; color: #333;" target="_blank">
+										<a href="<?=$social_item['social_target']?>" style="font-size: 20px; color: #fff;" target="_blank">
 											<i class="<?=$social_item['social_icon']?>"></i>
 										</a>
 									</div>

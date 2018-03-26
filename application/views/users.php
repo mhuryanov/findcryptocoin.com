@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-xs-12 text-right">
                 <div class="form-group">
-                    <a class="btn btn-primary" href="<?php echo base_url(); ?>addNew"><i class="fa fa-plus"></i> Add New</a>
+                    <a class="btn btn-primary" href="<?php echo base_url(); ?>admin/addNew"><i class="fa fa-plus"></i> Add New</a>
                 </div>
             </div>
         </div>
@@ -20,7 +20,7 @@
                 <div class="box-header">
                     <h3 class="box-title">Users List</h3>
                     <div class="box-tools">
-                        <form action="<?php echo base_url() ?>userListing" method="POST" id="searchList">
+                        <form action="<?php echo base_url() ?>admin/userListing" method="POST" id="searchList">
                             <div class="input-group">
                               <input type="text" name="searchText" value="<?php echo $searchText; ?>" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
                               <div class="input-group-btn">
@@ -53,7 +53,7 @@
                       <td><?php echo $record->mobile ?></td>
                       <td><?php echo $record->role ?></td>
                       <td class="text-center">
-                          <a class="btn btn-sm btn-info" href="<?php echo base_url().'editOld/'.$record->userId; ?>"><i class="fa fa-pencil"></i></a>
+                          <a class="btn btn-sm btn-info" href="<?php echo base_url().'admin/editOld/'.$record->userId; ?>"><i class="fa fa-pencil"></i></a>
                           <a class="btn btn-sm btn-danger deleteUser" href="#" data-userid="<?php echo $record->userId; ?>"><i class="fa fa-trash"></i></a>
                       </td>
                     </tr>
@@ -79,7 +79,7 @@
             e.preventDefault();            
             var link = jQuery(this).get(0).href;            
             var value = link.substring(link.lastIndexOf('/') + 1);
-            jQuery("#searchList").attr("action", baseURL + "userListing/" + value);
+            jQuery("#searchList").attr("action", baseURL + "admin/userListing/" + value);
             jQuery("#searchList").submit();
         });
     });

@@ -43,7 +43,7 @@ $("#login-btn").click(function(){
 			$("#login-success-alert").show();
 			$("#login-success-alert .alert-data").html(data.message);
 
-			setTimeout(function(){ window.location = baseURL + 'home' }, 3000);
+			setTimeout(function(){ window.location = baseURL + 'user/myaccount' }, 3000);
 		} else {
 			$("#login-error-alert").show();
 			$("#login-success-alert").hide();

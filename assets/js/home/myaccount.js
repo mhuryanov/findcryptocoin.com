@@ -34,6 +34,10 @@ $("#save-firstname-btn").click(function(){
 			firstname: firstname
 		},
 		type: 'post'
+	}).done(function(){
+		showMyAccountAction('success', 'First Name is saved successfully');
+	}).fail(function(){
+		showMyAccountAction('error', 'First Name is not saved');
 	});
 });
 
@@ -46,7 +50,11 @@ $("#save-lastname-btn").click(function(){
 			lastname: lastname
 		},
 		type: 'post'
-	});
+	}).done(function(){
+		showMyAccountAction('success', 'Last Name is saved successfully');
+	}).fail(function(){
+		showMyAccountAction('error', 'Last Name is not saved');
+	});;
 });
 
 $("#save-email-btn").click(function(){
@@ -58,7 +66,11 @@ $("#save-email-btn").click(function(){
 			email: email
 		},
 		type: 'post'
-	});
+	}).done(function(){
+		showMyAccountAction('success', 'Email is saved successfully');
+	}).fail(function(){
+		showMyAccountAction('error', 'Email is not saved');
+	});;
 });
 
 $("#save-username-btn").click(function(){
@@ -70,7 +82,11 @@ $("#save-username-btn").click(function(){
 			username: username
 		},
 		type: 'post'
-	});
+	}).done(function(){
+		showMyAccountAction('success', 'User Name is saved successfully');
+	}).fail(function(){
+		showMyAccountAction('error', 'User Name is not saved');
+	});;
 });
 
 $("#save-phone-btn").click(function(){
@@ -82,5 +98,29 @@ $("#save-phone-btn").click(function(){
 			phone: phone
 		},
 		type: 'post'
-	});
+	}).done(function(){
+		showMyAccountAction('success', 'Phone Number is saved successfully');
+	}).fail(function(){
+		showMyAccountAction('error', 'Phone Number is not saved');
+	});;
 });
+
+
+function showMyAccountAction(status = 'success', messageBody){
+	if(status == "success"){
+		$("#myaccount-action-alert-body").append(`
+			<div class="alert alert-success alert-dismissible">
+			  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			  <strong>Success!</strong> `+ messageBody +`
+			</div>
+		`);	
+	} else {
+		$("#myaccount-action-alert-body").append(`
+			<div class="alert alert-danger alert-dismissible">
+			  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			  <strong>Error</strong> `+ messageBody +`
+			</div>
+		`);	
+	}
+	
+}

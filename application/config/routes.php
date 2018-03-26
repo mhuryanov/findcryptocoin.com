@@ -81,6 +81,9 @@ $route['user/myaccount'] = 'home/myaccount';
 $route['user/seeauctions'] = 'home/seeauctions';
 $route['user/logout'] = 'home/logout';
 $route['contact_us'] = 'home/contact_us';
+$route['user/disableaccount'] = 'home/disableaccount';
+$route['user/enableaccount'] = 'home/enableaccount';
+$route['user/removeaccount'] = 'home/removeaccount';
 
 	// backend
 $route['user/b_signup'] = 'userlogin/b_signup';

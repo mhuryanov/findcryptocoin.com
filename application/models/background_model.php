@@ -11,6 +11,7 @@ class Background_model extends CI_Model
     }
 
 	public function getCurrentBackground(){
+		$this->session->set_userdata('bg_src','');
 		$this->db->where('bg_status', 'active');
 		$this->db->limit(1);
 		$query = $this->db->get($this->table_name);
@@ -20,6 +21,7 @@ class Background_model extends CI_Model
             $sessionArray = $backgrounds[0];                        
             $this->session->set_userdata($sessionArray);
         } else {
+
         }
 	}
 }

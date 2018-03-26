@@ -50,8 +50,8 @@
 	        		<div class="menu-item">
 						<p style="margin: 0">Hello <?=$this->session->userdata('user-name')?></p>
 						
-					</div>
-	        		<div class="menu-item">
+					<!-- </div>
+	        		<div class="menu-item"> -->
 						
 						<p style="margin: 0"><a href="<?=base_url()?>user/logout">Log out</a></p>
 					</div>

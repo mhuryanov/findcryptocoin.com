@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title><?=$title?></title>
-	<meta name="description" content="Findcryptocoin is for Findcryptocoin">
+	<title>Buy/Auction Digital Currency – findcryptocoin</title>
+	<meta name="description" content="Findcryptocoin is a bitcoin & alternative coin exchange that provides a secure platform to buy, exchange and auctions cryptocurrency.">
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/dist/css/home.css">
 	<link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/dist/css/user.css">

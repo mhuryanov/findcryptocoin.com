@@ -8,8 +8,10 @@
 <?php if ($this->session->userdata('bg_option') == 'image'){?>
 <img src="<?=base_url()?>assets/background/<?=$this->session->userdata('bg_src')?>" id="background-video">
 <?php }	?>
-
+<h1 style="text-align:center;color:yellow;">BUY AND EXCHANGE DIGITAL CURRENCY</h1>
+	<h2 style="text-align:center;color:blue;">A leading platform for cryptocurrency auctions</h2>
 <div class="home-content flex">
+	
 	<div class="buy-bitcoin-form">
 		<div class="buy-form-div">
 			

@@ -302,9 +302,10 @@ body {
 .myaccount .myaccount-content .myaccount-content-header{
     height: 70px;
     background: white;
-    border-bottom: solid 1px #ddd;
+    border: solid 1px #ddd;
     display: flex;
     align-items: center;
+    
 }
 
 
@@ -526,8 +527,6 @@ body {
         padding-top: 90px;
     }
 
-
-
     .menu-div-mobile.close .menu-content{
         display: none;
     }
@@ -537,4 +536,34 @@ body {
         color: #4080b9;
     }
 
+    .myaccount .sidebar{
+        display: none;
+    }
+
+    .myaccount .myaccount-content{
+        width: 100%;
+    }
+
+    .myaccount .myaccount-content .myaccount-content-details{
+        padding: 0;
+    }
+
+    .myaccount .myaccount-content .myaccount-content-details .myaccount-content-item{
+        padding: 0;
+        display: block;
+    }
+
+    .transaction-id-t{
+        display: none;
+    }
+
+    .myaccount .myaccount-content .myaccount-content-header .sidebar-toggle-btn{
+        display: none;
+    }
+
+}
+
+
+::-webkit-scrollbar {
+    width: 1px;
 }

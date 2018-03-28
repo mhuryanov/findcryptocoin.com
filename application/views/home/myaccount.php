@@ -69,7 +69,7 @@
 				<div class="content-item-details">
 					<table class="table table-striped table-bordered table-list">
 						<thead>
-							<th>Transaction Id</th>
+							<th><span class="transaction-id-t">Transaction</span> Id</th>
 							<th>Details</th>
 							<th>Date</th>
 							<th>Status</th>
@@ -179,7 +179,7 @@
 			<div class="myaccount-content-item" id="my-account-item">
 				<div class="content-item-title" style="display: flex; justify-content: space-between; align-items: center;">
 					<h3>My Account</h3> 
-					<div>
+					<div style="display: flex;">
 						<?php if ($myaccount['user_status'] == 'enabled'): ?>
 							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#disable_account_modal">Disable Account</button>
 						<?php endif ?>

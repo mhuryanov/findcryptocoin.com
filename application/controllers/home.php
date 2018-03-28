@@ -54,8 +54,18 @@ class Home extends CI_Controller
         $coms = $this->communication_model->getMyCommunications();
         $data['mycoms'] = array();
         foreach ($coms as $comitem) {
-            $comitem['com_user_from'] = $this->user_model->getUserInfoById($comitem['com_from'])[0];
-            $comitem['com_user_to'] = $this->user_model->getUserInfoById($comitem['com_to'])[0];
+
+            $com_user_from = $this->user_model->getUserInfoById($comitem['com_to']);
+            if(count($com_user_from) > 0){
+                $comitem['com_user_from'] = $this->user_model->getUserInfoById($comitem['com_from'])[0];    
+            }
+
+            
+            $com_user_to = $this->user_model->getUserInfoById($comitem['com_to']);
+            if(count($com_user_to) > 0){
+                $comitem['com_user_to'] = $this->user_model->getUserInfoById($comitem['com_to'])[0];    
+            }
+            
             $data['mycoms'][] = $comitem;
         }
 

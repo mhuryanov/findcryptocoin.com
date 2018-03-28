@@ -55,7 +55,7 @@ class Home extends CI_Controller
         $data['mycoms'] = array();
         foreach ($coms as $comitem) {
 
-            $com_user_from = $this->user_model->getUserInfoById($comitem['com_to']);
+            $com_user_from = $this->user_model->getUserInfoById($comitem['com_from']);
             if(count($com_user_from) > 0){
                 $comitem['com_user_from'] = $this->user_model->getUserInfoById($comitem['com_from'])[0];    
             }

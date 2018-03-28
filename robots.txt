@@ -6,7 +6,7 @@ User-agent: googlebot-image
 Disallow: 
 User-agent: googlebot-mobile
 Disallow: 
-User-agent: *
+User-agent: **
 Disallow: 
 Disallow: /cgi-bin/
 Disallow: /buttons/
